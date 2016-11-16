@@ -45,10 +45,7 @@ namespace NFCFighters
 		{
 			
 			// aapt resource value: 0x7f020000
-			public const int backgr = 2130837504;
-			
-			// aapt resource value: 0x7f020001
-			public const int logo = 2130837505;
+			public const int logo = 2130837504;
 			
 			static Drawable()
 			{
@@ -62,9 +59,6 @@ namespace NFCFighters
 		
 		public partial class Id
 		{
-			
-			// aapt resource value: 0x7f070000
-			public const int MainLayout = 2131165184;
 			
 			// aapt resource value: 0x7f070005
 			public const int buttonExit = 2131165189;
@@ -80,6 +74,9 @@ namespace NFCFighters
 			
 			// aapt resource value: 0x7f070002
 			public const int linearLayout2 = 2131165186;
+			
+			// aapt resource value: 0x7f070000
+			public const int mainLayout = 2131165184;
 			
 			static Id()
 			{
