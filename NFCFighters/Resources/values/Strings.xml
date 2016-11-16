@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">NFCFighters</string>
+	<string name="play">Play</string>
+	<string name="options">Options</string>
+	<string name="exit">Exit</string>
+	<plurals name="numberOfClicks">
+		<item quantity="one">%d click!</item>
+		<item quantity="other">%d clicks!</item>
+	</plurals>
+</resources>
