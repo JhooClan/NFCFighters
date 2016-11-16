@@ -12,10 +12,11 @@
     <AndroidResgenClass>Resource</AndroidResgenClass>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
-    <AndroidUseLatestPlatformSdk>False</AndroidUseLatestPlatformSdk>
+    <AndroidUseLatestPlatformSdk>true</AndroidUseLatestPlatformSdk>
     <AssemblyName>NFCFighters</AssemblyName>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <TargetFrameworkVersion>v5.1</TargetFrameworkVersion>
+    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -27,6 +28,7 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
     <AndroidLinkMode>None</AndroidLinkMode>
+    <EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>full</DebugType>
@@ -35,7 +37,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
-    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -54,7 +55,7 @@
     <None Include="Assets\AboutAssets.txt" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\Main.axml" />
+    <AndroidResource Include="Resources\layout-land\Main.axml" />
     <AndroidResource Include="Resources\values\Strings.xml" />
     <AndroidResource Include="Resources\mipmap-hdpi\Icon.png" />
     <AndroidResource Include="Resources\mipmap-mdpi\Icon.png" />
@@ -62,12 +63,15 @@
     <AndroidResource Include="Resources\mipmap-xxhdpi\Icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\Icon.png" />
     <AndroidResource Include="Resources\values-es\Strings.xml" />
-    <AndroidResource Include="Resources\drawable\backgr.jpg" />
     <AndroidResource Include="Resources\drawable\logo.png" />
+    <AndroidResource Include="Resources\layout-port\Main.axml" />
+    <AndroidResource Include="Resources\drawable\backgr-land.png" />
+    <AndroidResource Include="Resources\drawable\backgr-port.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
     <Folder Include="Resources\values-es\" />
+    <Folder Include="Resources\layout-port\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
