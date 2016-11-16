@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/mainLayout"
-    android:background="@drawable/backgr-port">
+    android:background="@drawable/backgr_port">
     <LinearLayout
         android:id="@+id/linearLayout1"
         android:orientation="horizontal"

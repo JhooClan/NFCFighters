@@ -65,8 +65,8 @@
     <AndroidResource Include="Resources\values-es\Strings.xml" />
     <AndroidResource Include="Resources\drawable\logo.png" />
     <AndroidResource Include="Resources\layout-port\Main.axml" />
-    <AndroidResource Include="Resources\drawable\backgr-land.png" />
-    <AndroidResource Include="Resources\drawable\backgr-port.png" />
+    <AndroidResource Include="Resources\drawable\backgr_land.png" />
+    <AndroidResource Include="Resources\drawable\backgr_port.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
