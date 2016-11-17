@@ -4,6 +4,13 @@
 	<string name="play">Play</string>
 	<string name="options">Options</string>
 	<string name="exit">Exit</string>
+	<string name="accessibility">Accessibility</string>
+	<string name="lefthanded">Left handed mode</string>
+	<string name="colorblind">Color blind</string>
+	<string name="save">Save</string>
+	<string name="savesuccess">Saved!</string>
+	<string name="restart">Please restart the app.</string>
+	<string name="ok">Ok</string>
 	<plurals name="numberOfClicks">
 		<item quantity="one">%d click!</item>
 		<item quantity="other">%d clicks!</item>

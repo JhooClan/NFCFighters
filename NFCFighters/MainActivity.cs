@@ -34,8 +34,8 @@ namespace NFCFighters
 
 			bOptions.Click += delegate
 			{
-				countO++;
-				bOptions.Text = Resources.GetQuantityString(Resource.Plurals.numberOfClicks, countO, countO);
+				var intent = new Intent(this, typeof(SettingsActivity));
+				StartActivity(intent);
 			};
 
 			bExit.Click += delegate
