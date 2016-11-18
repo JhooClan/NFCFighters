@@ -94,8 +94,6 @@
     <AndroidResource Include="Resources\layout-port\Main.axml" />
     <AndroidResource Include="Resources\drawable\backgr_land.png" />
     <AndroidResource Include="Resources\drawable\backgr_port.png" />
-    <AndroidResource Include="Resources\layout-land\Main_lh.axml" />
-    <AndroidResource Include="Resources\layout-port\Main_lh.axml" />
     <AndroidResource Include="Resources\layout-port\Settings.axml" />
   </ItemGroup>
   <ItemGroup />

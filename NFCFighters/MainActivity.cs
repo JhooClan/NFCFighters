@@ -17,13 +17,19 @@ namespace NFCFighters
 			this.RequestWindowFeature(WindowFeatures.NoTitle);
             Settings settings = Settings.LoadSettings();
             // Set our view from the "main" layout resource
-            if (!settings.isLeftHanded)
+            SetContentView(Resource.Layout.Main);
+
+            var surfaceOrientation = WindowManager.DefaultDisplay.Rotation;
+
+            if (settings.isLeftHanded && !(surfaceOrientation == SurfaceOrientation.Rotation0 || surfaceOrientation == SurfaceOrientation.Rotation180))
             {
-                SetContentView(Resource.Layout.Main);
-            }
-			else
-            {
-                SetContentView(Resource.Layout.Main_lh);
+                LinearLayout main = FindViewById<LinearLayout>(Resource.Id.mainLayout);
+                LinearLayout ll1 = FindViewById<LinearLayout>(Resource.Id.linearLayout1);
+                LinearLayout ll2 = FindViewById<LinearLayout>(Resource.Id.linearLayout2);
+
+                main.RemoveAllViews();
+                main.AddView(ll2);
+                main.AddView(ll1);
             }
 			//orientationListener = new MyOrientationListener(this);
 

@@ -122,10 +122,7 @@ namespace NFCFighters
 			public const int Main = 2130968576;
 			
 			// aapt resource value: 0x7f040001
-			public const int Main_lh = 2130968577;
-			
-			// aapt resource value: 0x7f040002
-			public const int Settings = 2130968578;
+			public const int Settings = 2130968577;
 			
 			static Layout()
 			{
