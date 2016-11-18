@@ -47,7 +47,20 @@ namespace NFCFighters
 
 			bExit.Click += delegate
 			{
-				System.Environment.Exit(0);
+                AlertDialog.Builder alert = new AlertDialog.Builder(this);
+                alert.SetTitle(Resources.GetString(Resource.String.exit));
+                alert.SetMessage(Resources.GetString(Resource.String.doexit));
+                alert.SetPositiveButton(Resource.String.yes, (senderAlert, args) =>
+                {
+                    System.Environment.Exit(0);
+                });
+                alert.SetNegativeButton(Resource.String.no, (senderAlert, args) =>
+                {
+                    
+                });
+
+                Dialog dialog = alert.Create();
+                dialog.Show();                
 			};
 		}
 	}

@@ -4,6 +4,7 @@
 	<string name="play">Jugar</string>
 	<string name="options">Opciones</string>
 	<string name="exit">Salir</string>
+  <string name="doexit">¿Estás seguro que deseas salir?</string>
 	<string name="accessibility">Accesibilidad</string>
 	<string name="lefthanded">Modo zurdo</string>
 	<string name="colorblind">Ceguera al color</string>
@@ -11,6 +12,9 @@
 	<string name="savesuccess">¡Guardado!</string>
 	<string name="restart">Por favor, reinicia la app.</string>
 	<string name="ok">Ok</string>
+  <string name="yes">Si</string>
+  <string name="no">No</string>
+  <string name="configok">Su configuración se ha guardado con éxito</string>
 	<plurals name="numberOfClicks">
 		<item quantity="one">%d clic!</item>
 		<item quantity="other">%d clics!</item>

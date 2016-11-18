@@ -1,11 +1,12 @@
 ﻿using Android.App;
+using Android.Content.PM;
 using Android.OS;
 using Android.Views;
 using Android.Widget;
 
 namespace NFCFighters
 {
-	[Activity(Label = "Settings")]
+	[Activity(Label = "Settings", ScreenOrientation = ScreenOrientation.Portrait)]
 	public class SettingsActivity : Activity
 	{
 		protected override void OnCreate(Bundle savedInstanceState)
@@ -40,10 +41,10 @@ namespace NFCFighters
 
             AlertDialog.Builder alert = new AlertDialog.Builder(this);
 			alert.SetTitle(Resources.GetString(Resource.String.savesuccess));
-			alert.SetMessage(Resources.GetString(Resource.String.restart));
+			alert.SetMessage(Resources.GetString(Resource.String.configok));
 			alert.SetNeutralButton(Resource.String.ok, (senderAlert, args) =>
 			{
-				Toast.MakeText(this, "", ToastLength.Short).Show();
+				
 			});
 
 			Dialog dialog = alert.Create();
