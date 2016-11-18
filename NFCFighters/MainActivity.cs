@@ -10,14 +10,21 @@ namespace NFCFighters
 	public class MainActivity : Activity
 	{
 		int countP = 0;
-		int countO = 0;
 
 		protected override void OnCreate (Bundle savedInstanceState)
 		{
 			base.OnCreate (savedInstanceState);
 			this.RequestWindowFeature(WindowFeatures.NoTitle);
-			// Set our view from the "main" layout resource
-			SetContentView (Resource.Layout.Main);
+            Settings settings = Settings.LoadSettings();
+            // Set our view from the "main" layout resource
+            if (!settings.isLeftHanded)
+            {
+                SetContentView(Resource.Layout.Main);
+            }
+			else
+            {
+                SetContentView(Resource.Layout.Main_lh);
+            }
 			//orientationListener = new MyOrientationListener(this);
 
 			// Get our button from the layout resource,

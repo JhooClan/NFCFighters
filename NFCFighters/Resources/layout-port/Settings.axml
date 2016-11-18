@@ -31,13 +31,13 @@
                 android:text="@string/lefthanded"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:enabled="false"
+                android:enabled="true"
                 android:id="@+id/cbSetLeftHanded" />
             <CheckBox
                 android:text="@string/colorblind"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:enabled="false"
+                android:enabled="true"
                 android:id="@+id/cbSetColorBlind" />
             <View
                 android:id="@+id/setDivider"
