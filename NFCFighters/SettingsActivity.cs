@@ -17,9 +17,9 @@ namespace NFCFighters
 
             SetContentView(Resource.Layout.Settings);
             CheckBox cbLeftHanded = FindViewById<CheckBox>(Resource.Id.cbSetLeftHanded);
-            CheckBox cbColorBlind = FindViewById<CheckBox>(Resource.Id.cbSetColorBlind);
+            //CheckBox cbColorBlind = FindViewById<CheckBox>(Resource.Id.cbSetColorBlind);
             cbLeftHanded.Checked = settings.isLeftHanded;
-            cbColorBlind.Checked = settings.isColorBlind;
+            //cbColorBlind.Checked = settings.isColorBlind;
 
             Button bSave = FindViewById<Button>(Resource.Id.bSetSave);
 
@@ -32,11 +32,11 @@ namespace NFCFighters
 		void Save()
 		{
 			CheckBox cbLeftHanded = FindViewById<CheckBox>(Resource.Id.cbSetLeftHanded);
-			CheckBox cbColorBlind = FindViewById<CheckBox>(Resource.Id.cbSetColorBlind);
+			//CheckBox cbColorBlind = FindViewById<CheckBox>(Resource.Id.cbSetColorBlind);
 
             Settings settings = Settings.LoadSettings();
             settings.isLeftHanded = cbLeftHanded.Checked;
-            settings.isColorBlind = cbColorBlind.Checked;
+            //settings.isColorBlind = cbColorBlind.Checked;
             Settings.SaveSettings(settings);
 
             AlertDialog.Builder alert = new AlertDialog.Builder(this);

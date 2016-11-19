@@ -27,7 +27,7 @@
             android:layout_weight="1"
             android:text="@string/play"
             android:layout_marginBottom="5dp"
-            android:background="@drawable/backg_button" />
+            android:background="@drawable/backg_button1" />
         <Button
             android:id="@+id/buttonOptions"
             android:layout_height="0dip"
@@ -35,7 +35,7 @@
             android:layout_weight="1"
             android:text="@string/options"
             android:layout_marginBottom="5dp"
-            android:background="@drawable/backg_button" />
+            android:background="@drawable/backg_button1" />
         <Button
             android:id="@+id/buttonExit"
             android:layout_height="0dip"
@@ -43,6 +43,6 @@
             android:layout_weight="1"
             android:text="@string/exit"
             android:layout_marginBottom="5dp"
-            android:background="@drawable/backg_button" />
+            android:background="@drawable/backg_button1" />
     </LinearLayout>
 </LinearLayout>

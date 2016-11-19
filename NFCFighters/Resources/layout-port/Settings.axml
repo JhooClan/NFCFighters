@@ -33,12 +33,51 @@
                 android:layout_height="match_parent"
                 android:enabled="true"
                 android:id="@+id/cbSetLeftHanded" />
-            <CheckBox
-                android:text="@string/colorblind"
+          <TextView
+                android:text="@string/colorselection"
+                android:textAppearance="?android:attr/textAppearanceMedium"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:enabled="true"
-                android:id="@+id/cbSetColorBlind" />
+                android:layout_marginBottom="10dip"
+                android:id="@+id/textView1" />
+                <RadioGroup android:id="@+id/color">
+                  <RadioButton android:id="@+id/color1"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="Color 1"/>
+                  <Button
+                      android:text="@string/play"
+                      android:layout_height="0dip"
+                      android:layout_width="match_parent"
+                      android:layout_weight="1"
+                      android:layout_marginBottom="5dp"
+                      android:background="@drawable/backg_button1" />
+                  <RadioButton android:id="@+id/color2"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="Color 2"/>
+                  <Button
+                      android:text="@string/play"
+                      android:layout_height="0dip"
+                      android:layout_width="match_parent"
+                      android:layout_weight="1"
+                      android:layout_marginBottom="5dp"
+                      android:background="@drawable/backg_button2" />
+                  <RadioButton android:id="@+id/color3"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="Color 3"/>
+                  <Button
+                      android:text="@string/play"
+                      android:layout_height="0dip"
+                      android:layout_width="match_parent"
+                      android:layout_weight="1"
+                      android:layout_marginBottom="5dp"
+                      android:background="@drawable/backg_button3" />      
+            </RadioGroup>    
+            
+              
+
             <View
                 android:id="@+id/setDivider"
                 android:layout_marginTop="10dip"

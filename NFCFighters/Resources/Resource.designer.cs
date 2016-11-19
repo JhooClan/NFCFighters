@@ -45,16 +45,22 @@ namespace NFCFighters
 		{
 			
 			// aapt resource value: 0x7f020000
-			public const int backg_button = 2130837504;
+			public const int backg_button1 = 2130837504;
 			
 			// aapt resource value: 0x7f020001
-			public const int backgr_land = 2130837505;
+			public const int backg_button2 = 2130837505;
 			
 			// aapt resource value: 0x7f020002
-			public const int backgr_port = 2130837506;
+			public const int backg_button3 = 2130837506;
 			
 			// aapt resource value: 0x7f020003
-			public const int logo = 2130837507;
+			public const int backgr_land = 2130837507;
+			
+			// aapt resource value: 0x7f020004
+			public const int backgr_port = 2130837508;
+			
+			// aapt resource value: 0x7f020005
+			public const int logo = 2130837509;
 			
 			static Drawable()
 			{
@@ -69,8 +75,8 @@ namespace NFCFighters
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f07000c
-			public const int bSetSave = 2131165196;
+			// aapt resource value: 0x7f07000f
+			public const int bSetSave = 2131165199;
 			
 			// aapt resource value: 0x7f070005
 			public const int buttonExit = 2131165189;
@@ -81,11 +87,20 @@ namespace NFCFighters
 			// aapt resource value: 0x7f070003
 			public const int buttonPlay = 2131165187;
 			
-			// aapt resource value: 0x7f07000a
-			public const int cbSetColorBlind = 2131165194;
-			
 			// aapt resource value: 0x7f070009
 			public const int cbSetLeftHanded = 2131165193;
+			
+			// aapt resource value: 0x7f07000a
+			public const int color = 2131165194;
+			
+			// aapt resource value: 0x7f07000b
+			public const int color1 = 2131165195;
+			
+			// aapt resource value: 0x7f07000c
+			public const int color2 = 2131165196;
+			
+			// aapt resource value: 0x7f07000d
+			public const int color3 = 2131165197;
 			
 			// aapt resource value: 0x7f070007
 			public const int linearLayout = 2131165191;
@@ -102,8 +117,8 @@ namespace NFCFighters
 			// aapt resource value: 0x7f070006
 			public const int scrollView = 2131165190;
 			
-			// aapt resource value: 0x7f07000b
-			public const int setDivider = 2131165195;
+			// aapt resource value: 0x7f07000e
+			public const int setDivider = 2131165198;
 			
 			// aapt resource value: 0x7f070008
 			public const int textView1 = 2131165192;
@@ -180,6 +195,9 @@ namespace NFCFighters
 			
 			// aapt resource value: 0x7f050007
 			public const int colorblind = 2131034119;
+			
+			// aapt resource value: 0x7f05000f
+			public const int colorselection = 2131034127;
 			
 			// aapt resource value: 0x7f05000e
 			public const int configok = 2131034126;
