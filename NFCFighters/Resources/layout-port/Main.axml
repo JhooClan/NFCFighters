@@ -14,28 +14,34 @@
         android:background="@drawable/logo" />
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="0dip"
+        android:layout_gravity="center"
         android:layout_weight="1"
         android:layout_below="@+id/linearLayout1"
         android:id="@+id/linearLayout2">
         <Button
             android:id="@+id/buttonPlay"
-            android:layout_height="0dip"
+            android:layout_height="5dp"
             android:layout_width="match_parent"
             android:layout_weight="1"
-            android:text="@string/play" />
+            android:text="@string/play"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/backg_button" />
         <Button
             android:id="@+id/buttonOptions"
-            android:layout_height="0dip"
+            android:layout_height="10dp"
             android:layout_width="match_parent"
             android:layout_weight="1"
-            android:text="@string/options" />
+            android:text="@string/options"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/backg_button" />
         <Button
             android:id="@+id/buttonExit"
-            android:layout_height="0dip"
+            android:layout_height="10dp"
             android:layout_width="match_parent"
             android:layout_weight="1"
-            android:text="@string/exit" />
+            android:text="@string/exit"
+            android:background="@drawable/backg_button" />
     </LinearLayout>
 </LinearLayout>
