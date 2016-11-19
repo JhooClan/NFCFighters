@@ -16,6 +16,7 @@
   <string name="no">No</string>
   <string name="configok">Su configuración se ha guardado con éxito</string>
   <string name="colorselection">Selecciona la configuración de color:</string>
+  <string name="nightmode">Modo noche</string>
 	<plurals name="numberOfClicks">
 		<item quantity="one">%d clic!</item>
 		<item quantity="other">%d clics!</item>

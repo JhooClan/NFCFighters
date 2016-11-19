@@ -13,15 +13,17 @@ namespace NFCFighters
 
 		protected override void OnCreate (Bundle savedInstanceState)
 		{
-			base.OnCreate (savedInstanceState);
+            base.OnCreate (savedInstanceState);
 			this.RequestWindowFeature(WindowFeatures.NoTitle);
             Settings settings = Settings.LoadSettings();
+
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
 
             var surfaceOrientation = WindowManager.DefaultDisplay.Rotation;
 
-            if (settings.isLeftHanded && !(surfaceOrientation == SurfaceOrientation.Rotation0 || surfaceOrientation == SurfaceOrientation.Rotation180))
+            if (settings.isLeftHanded && !(surfaceOrientation == SurfaceOrientation.Rotation0 || 
+                surfaceOrientation == SurfaceOrientation.Rotation180))
             {
                 LinearLayout main = FindViewById<LinearLayout>(Resource.Id.mainLayout);
                 LinearLayout ll1 = FindViewById<LinearLayout>(Resource.Id.linearLayout1);
@@ -31,23 +33,50 @@ namespace NFCFighters
                 main.AddView(ll2);
                 main.AddView(ll1);
             }
-			//orientationListener = new MyOrientationListener(this);
+
+            if (settings.isNightmode)
+            {
+                LinearLayout main = FindViewById<LinearLayout>(Resource.Id.mainLayout);
+                main.SetBackgroundDrawable(GetDrawable(Resource.Drawable.backgr_land_day));
+            }
+
 
 			// Get our button from the layout resource,
 			// and attach an event to it
 			Button bPlay = FindViewById<Button>(Resource.Id.buttonPlay);
 			Button bOptions = FindViewById<Button>(Resource.Id.buttonOptions);
 			Button bExit = FindViewById<Button>(Resource.Id.buttonExit);
-			
-			bPlay.Click += delegate
+
+
+            switch (settings.isColorConfig.ToString())
+            {
+                case "color1":
+                    bPlay.SetBackgroundDrawable(GetDrawable(Resource.Drawable.backg_button1));
+                    bOptions.SetBackgroundDrawable(GetDrawable(Resource.Drawable.backg_button1));
+                    bExit.SetBackgroundDrawable(GetDrawable(Resource.Drawable.backg_button1));
+                    break;
+                case "color2":
+                    bPlay.SetBackgroundDrawable(GetDrawable(Resource.Drawable.backg_button2));
+                    bOptions.SetBackgroundDrawable(GetDrawable(Resource.Drawable.backg_button2));
+                    bExit.SetBackgroundDrawable(GetDrawable(Resource.Drawable.backg_button2));
+                    break;
+                case "color3":
+                    bPlay.SetBackgroundDrawable(GetDrawable(Resource.Drawable.backg_button3));
+                    bOptions.SetBackgroundDrawable(GetDrawable(Resource.Drawable.backg_button3));
+                    bExit.SetBackgroundDrawable(GetDrawable(Resource.Drawable.backg_button3));
+                    break;
+            }
+
+            bPlay.Click += delegate
 			{
 				countP++;
 				bPlay.Text = Resources.GetQuantityString(Resource.Plurals.numberOfClicks, countP, countP);
 			};
 
 			bOptions.Click += delegate
-			{
-				var intent = new Intent(this, typeof(SettingsActivity));
+            {
+                FinishActivity(Resource.Layout.Main);
+                var intent = new Intent(this, typeof(SettingsActivity));
 				StartActivity(intent);
 			};
 
@@ -68,6 +97,6 @@ namespace NFCFighters
                 Dialog dialog = alert.Create();
                 dialog.Show();                
 			};
-		}
-	}
+		}        
+    }
 }

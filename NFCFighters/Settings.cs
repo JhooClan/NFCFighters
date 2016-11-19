@@ -6,12 +6,14 @@ namespace NFCFighters
 	public class Settings
 	{
 		public bool isLeftHanded { get; set; }
-		public bool isColorBlind { get; set; }
+		public string isColorConfig { get; set; }
+        public bool isNightmode { get; set; }
 
-		public Settings(Settings set)
+        public Settings(Settings set)
 		{
             isLeftHanded = set.isLeftHanded;
-            isColorBlind = set.isColorBlind;
+            isColorConfig = set.isColorConfig;
+            isNightmode = set.isNightmode;
 		}
 
         public Settings() : this(LoadSettings()) {}
@@ -21,7 +23,8 @@ namespace NFCFighters
             if (def)
             {
                 isLeftHanded = false;
-                isColorBlind = false;
+                isColorConfig = "color1";
+                isNightmode = false;
             }
         }
 
