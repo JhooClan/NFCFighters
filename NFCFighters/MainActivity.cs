@@ -78,6 +78,7 @@ namespace NFCFighters
                 FinishActivity(Resource.Layout.Main);
                 var intent = new Intent(this, typeof(SettingsActivity));
 				StartActivity(intent);
+                Finish();
 			};
 
 			bExit.Click += delegate

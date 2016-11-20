@@ -75,6 +75,7 @@ namespace NFCFighters
 			{
                 var intent = new Intent(this, typeof(MainActivity));
                 StartActivity(intent);
+                Finish();
             });
 
 			Dialog dialog = alert.Create();
