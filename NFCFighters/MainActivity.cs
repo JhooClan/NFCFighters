@@ -44,7 +44,7 @@ namespace NFCFighters
 			// Get our button from the layout resource,
 			// and attach an event to it
 			Button bPlay = FindViewById<Button>(Resource.Id.buttonPlay);
-			Button bOptions = FindViewById<Button>(Resource.Id.buttonSettings);
+			Button bSettings = FindViewById<Button>(Resource.Id.buttonSettings);
 			Button bExit = FindViewById<Button>(Resource.Id.buttonExit);
 
 
@@ -52,17 +52,17 @@ namespace NFCFighters
             {
                 case Color.COLOR_GREEN:
                     bPlay.SetBackgroundResource(Resource.Drawable.backg_button1);
-                    bOptions.SetBackgroundResource(Resource.Drawable.backg_button1);
+                    bSettings.SetBackgroundResource(Resource.Drawable.backg_button1);
                     bExit.SetBackgroundResource(Resource.Drawable.backg_button1);
                     break;
                 case Color.COLOR_RED:
                     bPlay.SetBackgroundResource(Resource.Drawable.backg_button2);
-                    bOptions.SetBackgroundResource(Resource.Drawable.backg_button2);
+                    bSettings.SetBackgroundResource(Resource.Drawable.backg_button2);
                     bExit.SetBackgroundResource(Resource.Drawable.backg_button2);
                     break;
                 case Color.COLOR_BLUE:
                     bPlay.SetBackgroundResource(Resource.Drawable.backg_button3);
-                    bOptions.SetBackgroundResource(Resource.Drawable.backg_button3);
+                    bSettings.SetBackgroundResource(Resource.Drawable.backg_button3);
                     bExit.SetBackgroundResource(Resource.Drawable.backg_button3);
                     break;
             }
@@ -73,7 +73,7 @@ namespace NFCFighters
 				bPlay.Text = Resources.GetQuantityString(Resource.Plurals.numberOfClicks, countP, countP);
 			};
 
-			bOptions.Click += delegate
+            bSettings.Click += delegate
             {
                 FinishActivity(Resource.Layout.Main);
                 var intent = new Intent(this, typeof(SettingsActivity));

@@ -33,15 +33,15 @@
             android:layout_width="match_parent"
             android:layout_weight="1"
             android:text="@string/play"
-            android:layout_margin="10dp"
+            android:layout_margin="5dp"
             android:background="@drawable/backg_button1" />
         <Button
-            android:id="@+id/buttonOptions"
+            android:id="@+id/buttonSettings"
             android:layout_height="0dip"
             android:layout_width="match_parent"
             android:layout_weight="1"
             android:text="@string/settings"
-            android:layout_margin="10dp"
+            android:layout_margin="5dp"
             android:background="@drawable/backg_button1" />
         <Button
             android:id="@+id/buttonExit"
@@ -49,8 +49,7 @@
             android:layout_width="match_parent"
             android:layout_weight="1"
             android:text="@string/exit"
-            android:layout_margin="10dp"
-            android:layout_marginBottom="15dp"
+            android:layout_margin="5dp"
             android:background="@drawable/backg_button1" />
     </LinearLayout>
 </LinearLayout>
