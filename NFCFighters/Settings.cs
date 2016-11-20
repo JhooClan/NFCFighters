@@ -8,13 +8,15 @@ namespace NFCFighters
 		public bool invertControls { get; set; }
 		public int colorConfig { get; set; }
         public bool nightmode { get; set; }
+        public bool notifications { get; set; }
 
         public Settings(Settings set)
 		{
             invertControls = set.invertControls;
             colorConfig = set.colorConfig;
             nightmode = set.nightmode;
-		}
+            notifications = set.notifications;
+        }
 
         public Settings() : this(LoadSettings()) {}
 
@@ -25,6 +27,7 @@ namespace NFCFighters
                 invertControls = false;
                 colorConfig = Color.COLOR_GREEN;
                 nightmode = false;
+                notifications = true;
             }
         }
 

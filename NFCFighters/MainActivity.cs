@@ -6,14 +6,16 @@ using Android.Content;
 using Android.Util;
 using Android.Graphics.Drawables;
 using Android.Graphics;
+using Android.Support.V4.App;
+using System.Threading;
+using Android.Content.Res;
+using System.Threading.Tasks;
 
 namespace NFCFighters
 {
 	[Activity (Label = "NFCFighters", MainLauncher = true, Icon = "@mipmap/icon")]
 	public class MainActivity : Activity
 	{
-		int countP = 0;
-
 		protected override void OnCreate (Bundle savedInstanceState)
 		{
             base.OnCreate (savedInstanceState);
@@ -113,7 +115,20 @@ namespace NFCFighters
 			{
                 Exit();
 			};
-		}
+
+            NotificationThread nt = new NotificationThread(this, Resources.GetStringArray(Resource.Array.notificationTitle), Resources.GetStringArray(Resource.Array.notificationContent));
+            ThreadStart myThreadDelegate = new ThreadStart(nt.StartNotifications);
+            Thread myThread = new Thread(myThreadDelegate);
+
+            if (settings.notifications && !myThread.IsAlive)
+            {
+                myThread.Start();
+            }
+            else if (!settings.notifications && myThread.IsAlive)
+            {
+                myThread.Abort();
+            }
+        }
 
         private void Exit()
         {
@@ -136,6 +151,54 @@ namespace NFCFighters
         public override void OnBackPressed()
         {
             Exit();
+        }
+    }
+
+    class NotificationThread
+    {
+        private Context context;
+        private const int ButtonClickNotificationId = 1000;
+        private string[] nTitle;
+        private string[] nContent;
+        private volatile bool cont;
+
+        public NotificationThread(Context context, string[] nTitle, string[] nContent)
+        {
+            this.context = context;
+            this.nTitle = nTitle;
+            this.nContent = nContent;
+        }
+        private void ShowNotification(int id)
+        {
+            NotificationCompat.Builder builder = new NotificationCompat.Builder(context)
+            .SetAutoCancel(true)                    // Dismiss from the notif. area when clicked
+            .SetContentTitle(nTitle[id])      // Set its title
+            .SetContentText(nContent[id]) // The message to display.
+            .SetSmallIcon(Resource.Mipmap.Icon);
+
+            // Finally, publish the notification:
+            NotificationManager notificationManager = context.GetSystemService(Context.NotificationService) as NotificationManager;
+            notificationManager.Notify(ButtonClickNotificationId, builder.Build());
+        }
+        public async void StartNotifications()
+        {
+            int count = 0;
+            cont = true;
+            while (cont)
+            {
+                foreach (string s in nTitle)
+                {
+                    ShowNotification(count);
+                    await Task.Delay(10000);
+                    count++;
+                }
+                count = 0;
+            }
+        }
+
+        public void StopNotifications()
+        {
+            cont = false;
         }
     }
 }

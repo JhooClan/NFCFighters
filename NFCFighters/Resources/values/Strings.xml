@@ -24,4 +24,13 @@
 		<item quantity="one">%d click!</item>
 		<item quantity="other">%d clicks!</item>
 	</plurals>
+  <string-array name="notificationTitle">
+    <item>Changes</item>
+    <item>New characters</item>
+  </string-array>
+  <string-array name="notificationContent">
+    <item>The app is still in development process, a lot of things may be added!</item>
+    <item>Gherkin, the Cruel, is going to be added in future releases.</item>
+  </string-array>
+  <string name="notifications">Notifications</string>
 </resources>

@@ -19,9 +19,11 @@ namespace NFCFighters
             SetContentView(Resource.Layout.Settings);
             CheckBox cbLeftHanded = FindViewById<CheckBox>(Resource.Id.cbInvert);
             CheckBox nightmode = FindViewById<CheckBox>(Resource.Id.nightmode);
+            CheckBox notifications = FindViewById<CheckBox>(Resource.Id.notifications);
             RadioGroup color = FindViewById<RadioGroup>(Resource.Id.color);
             cbLeftHanded.Checked = settings.invertControls;
             nightmode.Checked = settings.nightmode;
+            notifications.Checked = settings.notifications;
 
             switch (settings.colorConfig)
             {
@@ -51,6 +53,7 @@ namespace NFCFighters
 		{
 			CheckBox cbLeftHanded = FindViewById<CheckBox>(Resource.Id.cbInvert);
             CheckBox nightmode = FindViewById<CheckBox>(Resource.Id.nightmode);
+            CheckBox notifications = FindViewById<CheckBox>(Resource.Id.notifications);
             RadioGroup color = FindViewById<RadioGroup>(Resource.Id.color);
             RadioButton color1 = FindViewById<RadioButton>(Resource.Id.color1);
             RadioButton color2 = FindViewById<RadioButton>(Resource.Id.color2);
@@ -59,6 +62,7 @@ namespace NFCFighters
             Settings settings = Settings.LoadSettings();
             settings.invertControls = cbLeftHanded.Checked;
             settings.nightmode = nightmode.Checked;
+            settings.notifications = notifications.Checked;
             if (color1.Checked)
                 settings.colorConfig = Color.COLOR_GREEN;
             else if (color2.Checked)

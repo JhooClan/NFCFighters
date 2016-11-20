@@ -24,4 +24,13 @@
 		<item quantity="one">%d clic!</item>
 		<item quantity="other">%d clics!</item>
 	</plurals>
+  <string-array name="notificationTitle">
+    <item>Cambios</item>
+    <item>Nuevos personajes</item>
+  </string-array>
+  <string-array name="notificationContent">
+    <item>La aplicación está todavía en proceso de desarrollo, ¡muchas cosas serán añadidas!</item>
+    <item>Pepinillo, el Cruel, será añadido en futuras distribuciones.</item>
+  </string-array>
+  <string name="notifications">Notificaciones</string>
 </resources>
