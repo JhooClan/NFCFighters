@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/mainLayout"
-    android:background="@drawable/backgr_land">
+    android:background="@drawable/backgr_port">
     <LinearLayout
         android:id="@+id/linearLayout1"
         android:orientation="horizontal"
@@ -13,8 +13,8 @@
         android:layout_height="match_parent"
         android:layout_weight="1">
         <ImageView
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:id="@+id/imgLogo"
             android:src="@drawable/logo"
             android:scaleType="centerInside" />
@@ -22,33 +22,33 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="0dp"
-        android:layout_gravity="center"
         android:layout_height="match_parent"
+        android:layout_gravity="center"
         android:layout_weight="1"
-        android:layout_toRightOf="@+id/linearLayout1"
+        android:layout_below="@+id/linearLayout1"
         android:id="@+id/linearLayout2">
         <Button
-            android:id="@+id/buttonPlay"
+            android:id="@+id/buttonSP"
             android:layout_height="0dp"
             android:layout_width="match_parent"
             android:layout_weight="1"
-            android:text="@string/play"
+            android:text="@string/singleplayer"
             android:layout_margin="5dp"
             android:background="@drawable/backg_button1" />
         <Button
-            android:id="@+id/buttonSettings"
+            android:id="@+id/buttonMP"
             android:layout_height="0dp"
             android:layout_width="match_parent"
             android:layout_weight="1"
-            android:text="@string/settings"
+            android:text="@string/multiplayer"
             android:layout_margin="5dp"
             android:background="@drawable/backg_button1" />
         <Button
-            android:id="@+id/buttonExit"
+            android:id="@+id/buttonBack"
             android:layout_height="0dp"
             android:layout_width="match_parent"
             android:layout_weight="1"
-            android:text="@string/exit"
+            android:text="@string/back"
             android:layout_margin="5dp"
             android:background="@drawable/backg_button1" />
     </LinearLayout>

@@ -81,6 +81,12 @@ namespace NFCFighters
 			Dialog dialog = alert.Create();
 			dialog.Show();
 		}
-        
+
+        public override void OnBackPressed()
+        {
+            var intent = new Intent(this, typeof(MainActivity));
+            StartActivity(intent);
+            Finish();
+        }
     }
 }

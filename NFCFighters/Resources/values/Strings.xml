@@ -17,6 +17,9 @@
   <string name="configok">Your configuration has been saved sucessfully</string>
   <string name="colorselection">Choose your color configuration:</string>
   <string name="nightmode">Night mode</string>
+  <string name="singleplayer">Single player</string>
+  <string name="multiplayer">Multiplayer</string>
+  <string name="back">Back</string>
 	<plurals name="numberOfClicks">
 		<item quantity="one">%d click!</item>
 		<item quantity="other">%d clicks!</item>

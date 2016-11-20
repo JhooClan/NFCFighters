@@ -3,6 +3,9 @@ using Android.Widget;
 using Android.OS;
 using Android.Views;
 using Android.Content;
+using Android.Util;
+using Android.Graphics.Drawables;
+using Android.Graphics;
 
 namespace NFCFighters
 {
@@ -21,6 +24,15 @@ namespace NFCFighters
             SetContentView(Resource.Layout.Main);
 
             var surfaceOrientation = WindowManager.DefaultDisplay.Rotation;
+
+            DisplayMetrics metrics = Resources.DisplayMetrics;
+            int bHeight = metrics.HeightPixels;
+
+            if (surfaceOrientation == SurfaceOrientation.Rotation0 || surfaceOrientation == SurfaceOrientation.Rotation180)
+            {
+                bHeight = bHeight / 2;
+            }
+            bHeight = bHeight / 5;
 
             if (settings.invertControls && !(surfaceOrientation == SurfaceOrientation.Rotation0 || 
                 surfaceOrientation == SurfaceOrientation.Rotation180))
@@ -47,6 +59,23 @@ namespace NFCFighters
 			Button bSettings = FindViewById<Button>(Resource.Id.buttonSettings);
 			Button bExit = FindViewById<Button>(Resource.Id.buttonExit);
 
+            Drawable dPlay = GetDrawable(Resource.Drawable.play);
+            Bitmap bmPlay = ((BitmapDrawable)dPlay).Bitmap;
+            bmPlay = Bitmap.CreateScaledBitmap(bmPlay, bHeight, bHeight, false);
+            dPlay = new BitmapDrawable(this.Resources, bmPlay);
+            bPlay.SetCompoundDrawablesWithIntrinsicBounds(dPlay, null, null, null);
+            
+            Drawable dSet = GetDrawable(Resource.Drawable.settings);
+            Bitmap bmSet = ((BitmapDrawable)dSet).Bitmap;
+            bmSet = Bitmap.CreateScaledBitmap(bmSet, bHeight, bHeight, false);
+            dSet = new BitmapDrawable(this.Resources, bmSet);
+            bSettings.SetCompoundDrawablesWithIntrinsicBounds(dSet, null, null, null);
+            
+            Drawable dEx = GetDrawable(Resource.Drawable.exit);
+            Bitmap bmEx = ((BitmapDrawable)dEx).Bitmap;
+            bmEx = Bitmap.CreateScaledBitmap(bmEx, bHeight, bHeight, false);
+            dEx = new BitmapDrawable(this.Resources, bmEx);
+            bExit.SetCompoundDrawablesWithIntrinsicBounds(dEx, null, null, null);
 
             switch (settings.colorConfig)
             {
@@ -68,36 +97,45 @@ namespace NFCFighters
             }
 
             bPlay.Click += delegate
-			{
-				countP++;
-				bPlay.Text = Resources.GetQuantityString(Resource.Plurals.numberOfClicks, countP, countP);
-			};
+            {
+                var intent = new Intent(this, typeof(PlayActivity));
+                StartActivity(intent);
+            };
 
             bSettings.Click += delegate
             {
-                FinishActivity(Resource.Layout.Main);
+                Finish();
                 var intent = new Intent(this, typeof(SettingsActivity));
 				StartActivity(intent);
-                Finish();
 			};
 
 			bExit.Click += delegate
 			{
-                AlertDialog.Builder alert = new AlertDialog.Builder(this);
-                alert.SetTitle(Resources.GetString(Resource.String.exit));
-                alert.SetMessage(Resources.GetString(Resource.String.doexit));
-                alert.SetPositiveButton(Resource.String.yes, (senderAlert, args) =>
-                {
-                    System.Environment.Exit(0);
-                });
-                alert.SetNegativeButton(Resource.String.no, (senderAlert, args) =>
-                {
-                    
-                });
-
-                Dialog dialog = alert.Create();
-                dialog.Show();                
+                Exit();
 			};
-		}        
+		}
+
+        private void Exit()
+        {
+            AlertDialog.Builder alert = new AlertDialog.Builder(this);
+            alert.SetTitle(Resources.GetString(Resource.String.exit));
+            alert.SetMessage(Resources.GetString(Resource.String.doexit));
+            alert.SetPositiveButton(Resource.String.yes, (senderAlert, args) =>
+            {
+                System.Environment.Exit(0);
+            });
+            alert.SetNegativeButton(Resource.String.no, (senderAlert, args) =>
+            {
+
+            });
+
+            Dialog dialog = alert.Create();
+            dialog.Show();
+        }
+
+        public override void OnBackPressed()
+        {
+            Exit();
+        }
     }
 }

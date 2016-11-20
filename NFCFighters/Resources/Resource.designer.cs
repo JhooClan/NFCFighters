@@ -45,28 +45,46 @@ namespace NFCFighters
 		{
 			
 			// aapt resource value: 0x7f020000
-			public const int backg_button1 = 2130837504;
+			public const int backarrow = 2130837504;
 			
 			// aapt resource value: 0x7f020001
-			public const int backg_button2 = 2130837505;
+			public const int backg_button1 = 2130837505;
 			
 			// aapt resource value: 0x7f020002
-			public const int backg_button3 = 2130837506;
+			public const int backg_button2 = 2130837506;
 			
 			// aapt resource value: 0x7f020003
-			public const int backgr_land = 2130837507;
+			public const int backg_button3 = 2130837507;
 			
 			// aapt resource value: 0x7f020004
-			public const int backgr_land_day = 2130837508;
+			public const int backgr_land = 2130837508;
 			
 			// aapt resource value: 0x7f020005
-			public const int backgr_port = 2130837509;
+			public const int backgr_land_day = 2130837509;
 			
 			// aapt resource value: 0x7f020006
-			public const int backgr_port_day = 2130837510;
+			public const int backgr_port = 2130837510;
 			
 			// aapt resource value: 0x7f020007
-			public const int logo = 2130837511;
+			public const int backgr_port_day = 2130837511;
+			
+			// aapt resource value: 0x7f020008
+			public const int exit = 2130837512;
+			
+			// aapt resource value: 0x7f020009
+			public const int logo = 2130837513;
+			
+			// aapt resource value: 0x7f02000a
+			public const int multiplayer = 2130837514;
+			
+			// aapt resource value: 0x7f02000b
+			public const int play = 2130837515;
+			
+			// aapt resource value: 0x7f02000c
+			public const int settings = 2130837516;
+			
+			// aapt resource value: 0x7f02000d
+			public const int singleplayer = 2130837517;
 			
 			static Drawable()
 			{
@@ -81,38 +99,47 @@ namespace NFCFighters
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f070011
-			public const int bSetSave = 2131165201;
+			// aapt resource value: 0x7f070014
+			public const int bSetSave = 2131165204;
+			
+			// aapt resource value: 0x7f070009
+			public const int buttonBack = 2131165193;
 			
 			// aapt resource value: 0x7f070006
 			public const int buttonExit = 2131165190;
 			
+			// aapt resource value: 0x7f070008
+			public const int buttonMP = 2131165192;
+			
 			// aapt resource value: 0x7f070004
 			public const int buttonPlay = 2131165188;
+			
+			// aapt resource value: 0x7f070007
+			public const int buttonSP = 2131165191;
 			
 			// aapt resource value: 0x7f070005
 			public const int buttonSettings = 2131165189;
 			
-			// aapt resource value: 0x7f07000a
-			public const int cbInvert = 2131165194;
-			
-			// aapt resource value: 0x7f07000c
-			public const int color = 2131165196;
-			
 			// aapt resource value: 0x7f07000d
-			public const int color1 = 2131165197;
-			
-			// aapt resource value: 0x7f07000e
-			public const int color2 = 2131165198;
+			public const int cbInvert = 2131165197;
 			
 			// aapt resource value: 0x7f07000f
-			public const int color3 = 2131165199;
+			public const int color = 2131165199;
+			
+			// aapt resource value: 0x7f070010
+			public const int color1 = 2131165200;
+			
+			// aapt resource value: 0x7f070011
+			public const int color2 = 2131165201;
+			
+			// aapt resource value: 0x7f070012
+			public const int color3 = 2131165202;
 			
 			// aapt resource value: 0x7f070002
 			public const int imgLogo = 2131165186;
 			
-			// aapt resource value: 0x7f070008
-			public const int linearLayout = 2131165192;
+			// aapt resource value: 0x7f07000b
+			public const int linearLayout = 2131165195;
 			
 			// aapt resource value: 0x7f070001
 			public const int linearLayout1 = 2131165185;
@@ -123,17 +150,17 @@ namespace NFCFighters
 			// aapt resource value: 0x7f070000
 			public const int mainLayout = 2131165184;
 			
-			// aapt resource value: 0x7f070010
-			public const int nightmode = 2131165200;
+			// aapt resource value: 0x7f070013
+			public const int nightmode = 2131165203;
 			
-			// aapt resource value: 0x7f070007
-			public const int scrollView = 2131165191;
+			// aapt resource value: 0x7f07000a
+			public const int scrollView = 2131165194;
 			
-			// aapt resource value: 0x7f07000b
-			public const int setDivider = 2131165195;
+			// aapt resource value: 0x7f07000e
+			public const int setDivider = 2131165198;
 			
-			// aapt resource value: 0x7f070009
-			public const int textView1 = 2131165193;
+			// aapt resource value: 0x7f07000c
+			public const int textView1 = 2131165196;
 			
 			static Id()
 			{
@@ -152,7 +179,10 @@ namespace NFCFighters
 			public const int Main = 2130968576;
 			
 			// aapt resource value: 0x7f040001
-			public const int Settings = 2130968577;
+			public const int Play = 2130968577;
+			
+			// aapt resource value: 0x7f040002
+			public const int Settings = 2130968578;
 			
 			static Layout()
 			{
@@ -205,6 +235,9 @@ namespace NFCFighters
 			// aapt resource value: 0x7f050000
 			public const int app_name = 2131034112;
 			
+			// aapt resource value: 0x7f050013
+			public const int back = 2131034131;
+			
 			// aapt resource value: 0x7f050007
 			public const int colorblind = 2131034119;
 			
@@ -222,6 +255,9 @@ namespace NFCFighters
 			
 			// aapt resource value: 0x7f050006
 			public const int invert = 2131034118;
+			
+			// aapt resource value: 0x7f050012
+			public const int multiplayer = 2131034130;
 			
 			// aapt resource value: 0x7f050010
 			public const int nightmode = 2131034128;
@@ -246,6 +282,9 @@ namespace NFCFighters
 			
 			// aapt resource value: 0x7f050002
 			public const int settings = 2131034114;
+			
+			// aapt resource value: 0x7f050011
+			public const int singleplayer = 2131034129;
 			
 			// aapt resource value: 0x7f05000c
 			public const int yes = 2131034124;
