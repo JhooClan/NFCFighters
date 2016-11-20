@@ -17,19 +17,25 @@ namespace NFCFighters
             Settings settings = Settings.LoadSettings();
 
             SetContentView(Resource.Layout.Settings);
-            CheckBox cbLeftHanded = FindViewById<CheckBox>(Resource.Id.cbSetLeftHanded);
+            CheckBox cbLeftHanded = FindViewById<CheckBox>(Resource.Id.cbInvert);
             CheckBox nightmode = FindViewById<CheckBox>(Resource.Id.nightmode);
             RadioGroup color = FindViewById<RadioGroup>(Resource.Id.color);
-            cbLeftHanded.Checked = settings.isLeftHanded;
-            nightmode.Checked = settings.isNightmode;
+            cbLeftHanded.Checked = settings.invertControls;
+            nightmode.Checked = settings.nightmode;
 
-            switch (settings.isColorConfig.ToString())
+            switch (settings.colorConfig)
             {
-                case "color1":
+                case Color.COLOR_RED:
+                    RadioButton color2 = FindViewById<RadioButton>(Resource.Id.color2);
+                    color2.Checked = true;
                     break;
-                case "color2":
+                case Color.COLOR_BLUE:
+                    RadioButton color3 = FindViewById<RadioButton>(Resource.Id.color3);
+                    color3.Checked = true;
                     break;
-                case "color3":
+                default:
+                    RadioButton color1 = FindViewById<RadioButton>(Resource.Id.color1);
+                    color1.Checked = true;
                     break;
             }
 
@@ -43,7 +49,7 @@ namespace NFCFighters
 
 		void Save()
 		{
-			CheckBox cbLeftHanded = FindViewById<CheckBox>(Resource.Id.cbSetLeftHanded);
+			CheckBox cbLeftHanded = FindViewById<CheckBox>(Resource.Id.cbInvert);
             CheckBox nightmode = FindViewById<CheckBox>(Resource.Id.nightmode);
             RadioGroup color = FindViewById<RadioGroup>(Resource.Id.color);
             RadioButton color1 = FindViewById<RadioButton>(Resource.Id.color1);
@@ -51,14 +57,14 @@ namespace NFCFighters
             RadioButton color3 = FindViewById<RadioButton>(Resource.Id.color3);
             
             Settings settings = Settings.LoadSettings();
-            settings.isLeftHanded = cbLeftHanded.Checked;
-            settings.isNightmode = nightmode.Checked;
+            settings.invertControls = cbLeftHanded.Checked;
+            settings.nightmode = nightmode.Checked;
             if (color1.Checked)
-                settings.isColorConfig = "color1";
-            if (color2.Checked)
-                settings.isColorConfig = "color2";
-            if (color3.Checked)
-                settings.isColorConfig = "color3";
+                settings.colorConfig = Color.COLOR_GREEN;
+            else if (color2.Checked)
+                settings.colorConfig = Color.COLOR_RED;
+            else if (color3.Checked)
+                settings.colorConfig = Color.COLOR_BLUE;
 
             Settings.SaveSettings(settings);
             

@@ -2,11 +2,11 @@
 <resources>
 	<string name="app_name">NFCFighters</string>
 	<string name="play">Jugar</string>
-	<string name="options">Opciones</string>
+	<string name="settings">Opciones</string>
 	<string name="exit">Salir</string>
   <string name="doexit">¿Estás seguro que deseas salir?</string>
 	<string name="accessibility">Accesibilidad</string>
-	<string name="lefthanded">Modo zurdo</string>
+	<string name="invert">Invertir controles</string>
 	<string name="colorblind">Ceguera al color</string>
 	<string name="save">Guardar</string>
 	<string name="savesuccess">¡Guardado!</string>

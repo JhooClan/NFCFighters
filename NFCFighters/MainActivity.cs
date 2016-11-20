@@ -22,7 +22,7 @@ namespace NFCFighters
 
             var surfaceOrientation = WindowManager.DefaultDisplay.Rotation;
 
-            if (settings.isLeftHanded && !(surfaceOrientation == SurfaceOrientation.Rotation0 || 
+            if (settings.invertControls && !(surfaceOrientation == SurfaceOrientation.Rotation0 || 
                 surfaceOrientation == SurfaceOrientation.Rotation180))
             {
                 LinearLayout main = FindViewById<LinearLayout>(Resource.Id.mainLayout);
@@ -34,36 +34,36 @@ namespace NFCFighters
                 main.AddView(ll1);
             }
 
-            if (settings.isNightmode)
+            if (settings.nightmode)
             {
                 LinearLayout main = FindViewById<LinearLayout>(Resource.Id.mainLayout);
-                main.SetBackgroundDrawable(GetDrawable(Resource.Drawable.backgr_land_day));
+                main.SetBackgroundResource(Resource.Drawable.backgr_land_day);
             }
 
 
 			// Get our button from the layout resource,
 			// and attach an event to it
 			Button bPlay = FindViewById<Button>(Resource.Id.buttonPlay);
-			Button bOptions = FindViewById<Button>(Resource.Id.buttonOptions);
+			Button bOptions = FindViewById<Button>(Resource.Id.buttonSettings);
 			Button bExit = FindViewById<Button>(Resource.Id.buttonExit);
 
 
-            switch (settings.isColorConfig.ToString())
+            switch (settings.colorConfig)
             {
-                case "color1":
-                    bPlay.SetBackgroundDrawable(GetDrawable(Resource.Drawable.backg_button1));
-                    bOptions.SetBackgroundDrawable(GetDrawable(Resource.Drawable.backg_button1));
-                    bExit.SetBackgroundDrawable(GetDrawable(Resource.Drawable.backg_button1));
+                case Color.COLOR_GREEN:
+                    bPlay.SetBackgroundResource(Resource.Drawable.backg_button1);
+                    bOptions.SetBackgroundResource(Resource.Drawable.backg_button1);
+                    bExit.SetBackgroundResource(Resource.Drawable.backg_button1);
                     break;
-                case "color2":
-                    bPlay.SetBackgroundDrawable(GetDrawable(Resource.Drawable.backg_button2));
-                    bOptions.SetBackgroundDrawable(GetDrawable(Resource.Drawable.backg_button2));
-                    bExit.SetBackgroundDrawable(GetDrawable(Resource.Drawable.backg_button2));
+                case Color.COLOR_RED:
+                    bPlay.SetBackgroundResource(Resource.Drawable.backg_button2);
+                    bOptions.SetBackgroundResource(Resource.Drawable.backg_button2);
+                    bExit.SetBackgroundResource(Resource.Drawable.backg_button2);
                     break;
-                case "color3":
-                    bPlay.SetBackgroundDrawable(GetDrawable(Resource.Drawable.backg_button3));
-                    bOptions.SetBackgroundDrawable(GetDrawable(Resource.Drawable.backg_button3));
-                    bExit.SetBackgroundDrawable(GetDrawable(Resource.Drawable.backg_button3));
+                case Color.COLOR_BLUE:
+                    bPlay.SetBackgroundResource(Resource.Drawable.backg_button3);
+                    bOptions.SetBackgroundResource(Resource.Drawable.backg_button3);
+                    bExit.SetBackgroundResource(Resource.Drawable.backg_button3);
                     break;
             }
 

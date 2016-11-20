@@ -5,15 +5,15 @@ namespace NFCFighters
 {
 	public class Settings
 	{
-		public bool isLeftHanded { get; set; }
-		public string isColorConfig { get; set; }
-        public bool isNightmode { get; set; }
+		public bool invertControls { get; set; }
+		public int colorConfig { get; set; }
+        public bool nightmode { get; set; }
 
         public Settings(Settings set)
 		{
-            isLeftHanded = set.isLeftHanded;
-            isColorConfig = set.isColorConfig;
-            isNightmode = set.isNightmode;
+            invertControls = set.invertControls;
+            colorConfig = set.colorConfig;
+            nightmode = set.nightmode;
 		}
 
         public Settings() : this(LoadSettings()) {}
@@ -22,9 +22,9 @@ namespace NFCFighters
         {
             if (def)
             {
-                isLeftHanded = false;
-                isColorConfig = "color1";
-                isNightmode = false;
+                invertControls = false;
+                colorConfig = Color.COLOR_GREEN;
+                nightmode = false;
             }
         }
 
@@ -45,7 +45,7 @@ namespace NFCFighters
                     }
                 }
             }
-            catch (IOException ex) { }
+            catch (IOException) { }
 
             return settings;
         }
