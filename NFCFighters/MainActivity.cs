@@ -10,6 +10,8 @@ using Android.Support.V4.App;
 using System.Threading;
 using Android.Content.Res;
 using System.Threading.Tasks;
+using System;
+using Android.Media;
 
 namespace NFCFighters
 {
@@ -98,36 +100,52 @@ namespace NFCFighters
                     break;
             }
 
+            MediaPlayer _player;
+
             bPlay.Click += delegate
             {
+                _player = MediaPlayer.Create(this, Resource.Raw.button);
+                _player.Start();
                 var intent = new Intent(this, typeof(PlayActivity));
                 StartActivity(intent);
+                while (_player.IsPlaying) { }
+                _player.Release();
             };
 
             bSettings.Click += delegate
             {
+                _player = MediaPlayer.Create(this, Resource.Raw.button);
+                _player.Start();
                 Finish();
                 var intent = new Intent(this, typeof(SettingsActivity));
 				StartActivity(intent);
-			};
+                while (_player.IsPlaying) { }
+                _player.Release();
+            };
 
 			bExit.Click += delegate
-			{
+            {
+                _player = MediaPlayer.Create(this, Resource.Raw.button);
+                _player.Start();
+                while (_player.IsPlaying) { }
+                _player.Release();
                 Exit();
 			};
 
-            NotificationThread nt = new NotificationThread(this, Resources.GetStringArray(Resource.Array.notificationTitle), Resources.GetStringArray(Resource.Array.notificationContent));
-            ThreadStart myThreadDelegate = new ThreadStart(nt.StartNotifications);
-            Thread myThread = new Thread(myThreadDelegate);
+            Intent ns = new Intent(ApplicationContext, typeof(NotificationService));
+            if (settings.notifications)
+            {
+                StartService(ns);
+            }
+            else if (!settings.notifications)
+            {
+                StopService(ns);
+            }
+        }
 
-            if (settings.notifications && !myThread.IsAlive)
-            {
-                myThread.Start();
-            }
-            else if (!settings.notifications && myThread.IsAlive)
-            {
-                myThread.Abort();
-            }
+        public override void OnBackPressed()
+        {
+            Exit();
         }
 
         private void Exit()
@@ -146,59 +164,6 @@ namespace NFCFighters
 
             Dialog dialog = alert.Create();
             dialog.Show();
-        }
-
-        public override void OnBackPressed()
-        {
-            Exit();
-        }
-    }
-
-    class NotificationThread
-    {
-        private Context context;
-        private const int ButtonClickNotificationId = 1000;
-        private string[] nTitle;
-        private string[] nContent;
-        private volatile bool cont;
-
-        public NotificationThread(Context context, string[] nTitle, string[] nContent)
-        {
-            this.context = context;
-            this.nTitle = nTitle;
-            this.nContent = nContent;
-        }
-        private void ShowNotification(int id)
-        {
-            NotificationCompat.Builder builder = new NotificationCompat.Builder(context)
-            .SetAutoCancel(true)                    // Dismiss from the notif. area when clicked
-            .SetContentTitle(nTitle[id])      // Set its title
-            .SetContentText(nContent[id]) // The message to display.
-            .SetSmallIcon(Resource.Mipmap.Icon);
-
-            // Finally, publish the notification:
-            NotificationManager notificationManager = context.GetSystemService(Context.NotificationService) as NotificationManager;
-            notificationManager.Notify(ButtonClickNotificationId, builder.Build());
-        }
-        public async void StartNotifications()
-        {
-            int count = 0;
-            cont = true;
-            while (cont)
-            {
-                foreach (string s in nTitle)
-                {
-                    ShowNotification(count);
-                    await Task.Delay(10000);
-                    count++;
-                }
-                count = 0;
-            }
-        }
-
-        public void StopNotifications()
-        {
-            cont = false;
         }
     }
 }

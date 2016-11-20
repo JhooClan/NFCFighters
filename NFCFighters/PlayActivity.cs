@@ -111,10 +111,18 @@ namespace NFCFighters
 
             bBack.Click += delegate
             {
-                //var intent = new Intent(this, typeof(SettingsActivity));
-                //StartActivity(intent);
                 Finish();
             };
+
+            Intent ns = new Intent(this, typeof(NotificationService));
+            if (settings.notifications)
+            {
+                StartService(ns);
+            }
+            else if (!settings.notifications)
+            {
+                StopService(ns);
+            }
         }
     }
 }

@@ -31,11 +31,11 @@ namespace NFCFighters
 		public partial class Array
 		{
 			
-			// aapt resource value: 0x7f070001
-			public const int notificationContent = 2131165185;
+			// aapt resource value: 0x7f080001
+			public const int notificationContent = 2131230721;
 			
-			// aapt resource value: 0x7f070000
-			public const int notificationTitle = 2131165184;
+			// aapt resource value: 0x7f080000
+			public const int notificationTitle = 2131230720;
 			
 			static Array()
 			{
@@ -118,74 +118,74 @@ namespace NFCFighters
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f080016
-			public const int bSetSave = 2131230742;
+			// aapt resource value: 0x7f090016
+			public const int bSetSave = 2131296278;
 			
-			// aapt resource value: 0x7f080009
-			public const int buttonBack = 2131230729;
+			// aapt resource value: 0x7f090009
+			public const int buttonBack = 2131296265;
 			
-			// aapt resource value: 0x7f080006
-			public const int buttonExit = 2131230726;
+			// aapt resource value: 0x7f090006
+			public const int buttonExit = 2131296262;
 			
-			// aapt resource value: 0x7f080008
-			public const int buttonMP = 2131230728;
+			// aapt resource value: 0x7f090008
+			public const int buttonMP = 2131296264;
 			
-			// aapt resource value: 0x7f080004
-			public const int buttonPlay = 2131230724;
+			// aapt resource value: 0x7f090004
+			public const int buttonPlay = 2131296260;
 			
-			// aapt resource value: 0x7f080007
-			public const int buttonSP = 2131230727;
+			// aapt resource value: 0x7f090007
+			public const int buttonSP = 2131296263;
 			
-			// aapt resource value: 0x7f080005
-			public const int buttonSettings = 2131230725;
+			// aapt resource value: 0x7f090005
+			public const int buttonSettings = 2131296261;
 			
-			// aapt resource value: 0x7f08000d
-			public const int cbInvert = 2131230733;
+			// aapt resource value: 0x7f09000d
+			public const int cbInvert = 2131296269;
 			
-			// aapt resource value: 0x7f08000f
-			public const int color = 2131230735;
+			// aapt resource value: 0x7f09000f
+			public const int color = 2131296271;
 			
-			// aapt resource value: 0x7f080010
-			public const int color1 = 2131230736;
+			// aapt resource value: 0x7f090010
+			public const int color1 = 2131296272;
 			
-			// aapt resource value: 0x7f080011
-			public const int color2 = 2131230737;
+			// aapt resource value: 0x7f090011
+			public const int color2 = 2131296273;
 			
-			// aapt resource value: 0x7f080012
-			public const int color3 = 2131230738;
+			// aapt resource value: 0x7f090012
+			public const int color3 = 2131296274;
 			
-			// aapt resource value: 0x7f080002
-			public const int imgLogo = 2131230722;
+			// aapt resource value: 0x7f090002
+			public const int imgLogo = 2131296258;
 			
-			// aapt resource value: 0x7f08000b
-			public const int linearLayout = 2131230731;
+			// aapt resource value: 0x7f09000b
+			public const int linearLayout = 2131296267;
 			
-			// aapt resource value: 0x7f080001
-			public const int linearLayout1 = 2131230721;
+			// aapt resource value: 0x7f090001
+			public const int linearLayout1 = 2131296257;
 			
-			// aapt resource value: 0x7f080003
-			public const int linearLayout2 = 2131230723;
+			// aapt resource value: 0x7f090003
+			public const int linearLayout2 = 2131296259;
 			
-			// aapt resource value: 0x7f080000
-			public const int mainLayout = 2131230720;
+			// aapt resource value: 0x7f090000
+			public const int mainLayout = 2131296256;
 			
-			// aapt resource value: 0x7f080013
-			public const int nightmode = 2131230739;
+			// aapt resource value: 0x7f090013
+			public const int nightmode = 2131296275;
 			
-			// aapt resource value: 0x7f080015
-			public const int notifications = 2131230741;
+			// aapt resource value: 0x7f090015
+			public const int notifications = 2131296277;
 			
-			// aapt resource value: 0x7f08000a
-			public const int scrollView = 2131230730;
+			// aapt resource value: 0x7f09000a
+			public const int scrollView = 2131296266;
 			
-			// aapt resource value: 0x7f08000e
-			public const int setDivider = 2131230734;
+			// aapt resource value: 0x7f09000e
+			public const int setDivider = 2131296270;
 			
-			// aapt resource value: 0x7f08000c
-			public const int textView1 = 2131230732;
+			// aapt resource value: 0x7f09000c
+			public const int textView1 = 2131296268;
 			
-			// aapt resource value: 0x7f080014
-			public const int textView2 = 2131230740;
+			// aapt resource value: 0x7f090014
+			public const int textView2 = 2131296276;
 			
 			static Id()
 			{
@@ -238,8 +238,8 @@ namespace NFCFighters
 		public partial class Plurals
 		{
 			
-			// aapt resource value: 0x7f060000
-			public const int numberOfClicks = 2131099648;
+			// aapt resource value: 0x7f070000
+			public const int numberOfClicks = 2131165184;
 			
 			static Plurals()
 			{
@@ -251,71 +251,87 @@ namespace NFCFighters
 			}
 		}
 		
+		public partial class Raw
+		{
+			
+			// aapt resource value: 0x7f050000
+			public const int button = 2131034112;
+			
+			static Raw()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Raw()
+			{
+			}
+		}
+		
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f050005
-			public const int accessibility = 2131034117;
+			// aapt resource value: 0x7f060005
+			public const int accessibility = 2131099653;
 			
-			// aapt resource value: 0x7f050000
-			public const int app_name = 2131034112;
+			// aapt resource value: 0x7f060000
+			public const int app_name = 2131099648;
 			
-			// aapt resource value: 0x7f050013
-			public const int back = 2131034131;
+			// aapt resource value: 0x7f060013
+			public const int back = 2131099667;
 			
-			// aapt resource value: 0x7f050007
-			public const int colorblind = 2131034119;
+			// aapt resource value: 0x7f060007
+			public const int colorblind = 2131099655;
 			
-			// aapt resource value: 0x7f05000f
-			public const int colorselection = 2131034127;
+			// aapt resource value: 0x7f06000f
+			public const int colorselection = 2131099663;
 			
-			// aapt resource value: 0x7f05000e
-			public const int configok = 2131034126;
+			// aapt resource value: 0x7f06000e
+			public const int configok = 2131099662;
 			
-			// aapt resource value: 0x7f050004
-			public const int doexit = 2131034116;
+			// aapt resource value: 0x7f060004
+			public const int doexit = 2131099652;
 			
-			// aapt resource value: 0x7f050003
-			public const int exit = 2131034115;
+			// aapt resource value: 0x7f060003
+			public const int exit = 2131099651;
 			
-			// aapt resource value: 0x7f050006
-			public const int invert = 2131034118;
+			// aapt resource value: 0x7f060006
+			public const int invert = 2131099654;
 			
-			// aapt resource value: 0x7f050012
-			public const int multiplayer = 2131034130;
+			// aapt resource value: 0x7f060012
+			public const int multiplayer = 2131099666;
 			
-			// aapt resource value: 0x7f050010
-			public const int nightmode = 2131034128;
+			// aapt resource value: 0x7f060010
+			public const int nightmode = 2131099664;
 			
-			// aapt resource value: 0x7f05000d
-			public const int no = 2131034125;
+			// aapt resource value: 0x7f06000d
+			public const int no = 2131099661;
 			
-			// aapt resource value: 0x7f050014
-			public const int notifications = 2131034132;
+			// aapt resource value: 0x7f060014
+			public const int notifications = 2131099668;
 			
-			// aapt resource value: 0x7f05000b
-			public const int ok = 2131034123;
+			// aapt resource value: 0x7f06000b
+			public const int ok = 2131099659;
 			
-			// aapt resource value: 0x7f050001
-			public const int play = 2131034113;
+			// aapt resource value: 0x7f060001
+			public const int play = 2131099649;
 			
-			// aapt resource value: 0x7f05000a
-			public const int restart = 2131034122;
+			// aapt resource value: 0x7f06000a
+			public const int restart = 2131099658;
 			
-			// aapt resource value: 0x7f050008
-			public const int save = 2131034120;
+			// aapt resource value: 0x7f060008
+			public const int save = 2131099656;
 			
-			// aapt resource value: 0x7f050009
-			public const int savesuccess = 2131034121;
+			// aapt resource value: 0x7f060009
+			public const int savesuccess = 2131099657;
 			
-			// aapt resource value: 0x7f050002
-			public const int settings = 2131034114;
+			// aapt resource value: 0x7f060002
+			public const int settings = 2131099650;
 			
-			// aapt resource value: 0x7f050011
-			public const int singleplayer = 2131034129;
+			// aapt resource value: 0x7f060011
+			public const int singleplayer = 2131099665;
 			
-			// aapt resource value: 0x7f05000c
-			public const int yes = 2131034124;
+			// aapt resource value: 0x7f06000c
+			public const int yes = 2131099660;
 			
 			static String()
 			{

@@ -47,7 +47,7 @@ namespace NFCFighters
 			{
 				Save();
 			};
-		}
+        }
 
 		void Save()
 		{
