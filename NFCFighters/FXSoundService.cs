@@ -15,14 +15,23 @@ using Android.Media;
 namespace NFCFighters
 {
     [Service]
-    class ButtonSoundService : Service
+    [IntentFilter(new[] { ButtonSound })]
+    class FXSoundService : Service
     {
+        public const string ButtonSound = "BUTTONSFX";
         MediaPlayer _player;
 
         public override StartCommandResult OnStartCommand(Intent intent, StartCommandFlags flags, int startId)
         {
+            int resId = 0;
+            switch (intent.Action)
+            {
+                case ButtonSound:
+                    resId = Resource.Raw.button;
+                    break;
+            }
             Toast.MakeText(ApplicationContext, Resource.String.app_name, ToastLength.Short);
-            _player = MediaPlayer.Create(this, Resource.Raw.button);
+            _player = MediaPlayer.Create(this, resId);
             _player.Start();
             return StartCommandResult.NotSticky;
         }

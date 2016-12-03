@@ -97,8 +97,9 @@ namespace NFCFighters
                     break;
             }
             int countSP = 0, countMP = 0;
-            
-            Intent bss = new Intent(ApplicationContext, typeof(ButtonSoundService));
+
+            Intent bss = new Intent(ApplicationContext, typeof(FXSoundService));
+            bss.SetAction(FXSoundService.ButtonSound);
 
             bSP.Click += delegate
             {

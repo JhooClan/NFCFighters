@@ -6,6 +6,7 @@ using Android.OS;
 using Android.Util;
 using Android.Support.V4.App;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace NFCFighters
 {
@@ -13,11 +14,11 @@ namespace NFCFighters
     class NotificationService : Service
     {
         private Context context;
-        private const int ButtonClickNotificationId = 1000;
+        private const int NotificationId = 1000;
         private string[] nTitle;
         private string[] nContent;
-        private volatile bool cont;
         private Task notiTask;
+        private CancellationTokenSource tokenSource = new CancellationTokenSource();
 
         public override StartCommandResult OnStartCommand(Intent intent, StartCommandFlags flags, int startId)
         {
@@ -25,16 +26,14 @@ namespace NFCFighters
             context = Application.Context;
             nTitle = Resources.GetStringArray(Resource.Array.notificationTitle);
             nContent = Resources.GetStringArray(Resource.Array.notificationContent);
-            cont = true;
-            notiTask = new Task(() => StartNotifications());
-            notiTask.Start();
+            notiTask = Task.Factory.StartNew(() => StartNotifications(tokenSource.Token), tokenSource.Token);
             return StartCommandResult.Sticky;
         }
 
         public override void OnDestroy()
         {
-            cont = false;
-            notiTask.Wait();
+            tokenSource.Cancel();
+            tokenSource.Dispose();
             base.OnDestroy();
         }
 
@@ -53,17 +52,21 @@ namespace NFCFighters
 
             // Finally, publish the notification:
             NotificationManager notificationManager = context.GetSystemService(Context.NotificationService) as NotificationManager;
-            notificationManager.Notify(ButtonClickNotificationId, builder.Build());
+            notificationManager.Notify(NotificationId, builder.Build());
         }
-        public async void StartNotifications()
+        public async void StartNotifications(CancellationToken ct)
         {
+            bool cont = true;
             while(cont)
             {
                 int count = 0;
                 foreach (string s in nTitle)
                 {
-                    if(cont == false)
+                    if(ct.IsCancellationRequested)
                     {
+                        cont = false;
+                        NotificationManager notificationManager = context.GetSystemService(Context.NotificationService) as NotificationManager;
+                        notificationManager.Cancel(NotificationId);
                         break;
                     }
                     ShowNotification(count);

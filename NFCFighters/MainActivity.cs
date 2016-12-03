@@ -12,6 +12,7 @@ using Android.Content.Res;
 using System.Threading.Tasks;
 using System;
 using Android.Media;
+using NFCFighters.Utils;
 
 namespace NFCFighters
 {
@@ -100,7 +101,8 @@ namespace NFCFighters
                     break;
             }
 
-            Intent bss = new Intent(ApplicationContext, typeof(ButtonSoundService));
+            Intent bss = new Intent(ApplicationContext, typeof(FXSoundService));
+            bss.SetAction(FXSoundService.ButtonSound);
 
             bPlay.Click += delegate
             {
@@ -126,7 +128,10 @@ namespace NFCFighters
             Intent ns = new Intent(ApplicationContext, typeof(NotificationService));
             if (settings.notifications)
             {
-                StartService(ns);
+                if (!ServiceUtils.IsMyServiceRunning(this, typeof(NotificationService).ToString()))
+                {
+                    StartService(ns);
+                }
             }
             else if (!settings.notifications)
             {
