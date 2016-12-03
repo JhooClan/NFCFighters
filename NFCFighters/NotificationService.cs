@@ -16,6 +16,8 @@ namespace NFCFighters
         private const int ButtonClickNotificationId = 1000;
         private string[] nTitle;
         private string[] nContent;
+        private volatile bool cont;
+        private Task notiTask;
 
         public override StartCommandResult OnStartCommand(Intent intent, StartCommandFlags flags, int startId)
         {
@@ -23,8 +25,17 @@ namespace NFCFighters
             context = Application.Context;
             nTitle = Resources.GetStringArray(Resource.Array.notificationTitle);
             nContent = Resources.GetStringArray(Resource.Array.notificationContent);
-            StartNotifications();
+            cont = true;
+            notiTask = new Task(() => StartNotifications());
+            notiTask.Start();
             return StartCommandResult.Sticky;
+        }
+
+        public override void OnDestroy()
+        {
+            cont = false;
+            notiTask.Wait();
+            base.OnDestroy();
         }
 
         public override IBinder OnBind(Intent intent)
@@ -46,12 +57,19 @@ namespace NFCFighters
         }
         public async void StartNotifications()
         {
-            int count = 0;
-            foreach (string s in nTitle)
+            while(cont)
             {
-                ShowNotification(count);
-                await Task.Delay(10000);
-                count++;
+                int count = 0;
+                foreach (string s in nTitle)
+                {
+                    if(cont == false)
+                    {
+                        break;
+                    }
+                    ShowNotification(count);
+                    await Task.Delay(10000);
+                    count++;
+                }
             }
         }
     }

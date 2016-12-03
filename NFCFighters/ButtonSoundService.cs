@@ -14,6 +14,7 @@ using Android.Media;
 
 namespace NFCFighters
 {
+    [Service]
     class ButtonSoundService : Service
     {
         MediaPlayer _player;
@@ -22,7 +23,8 @@ namespace NFCFighters
         {
             Toast.MakeText(ApplicationContext, Resource.String.app_name, ToastLength.Short);
             _player = MediaPlayer.Create(this, Resource.Raw.button);
-            return StartCommandResult.Sticky;
+            _player.Start();
+            return StartCommandResult.NotSticky;
         }
 
         public override IBinder OnBind(Intent intent)
@@ -32,7 +34,6 @@ namespace NFCFighters
 
         public override void OnDestroy()
         {
-            _player.Start();
             while (_player.IsPlaying) { }
             _player.Release();
             base.OnDestroy();

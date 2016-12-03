@@ -97,32 +97,28 @@ namespace NFCFighters
                     break;
             }
             int countSP = 0, countMP = 0;
+            
+            Intent bss = new Intent(ApplicationContext, typeof(ButtonSoundService));
+
             bSP.Click += delegate
             {
+                StartService(bss);
                 countSP++;
                 bSP.Text = Resources.GetQuantityString(Resource.Plurals.numberOfClicks, countSP, countSP);
             };
 
             bMP.Click += delegate
             {
+                StartService(bss);
                 countMP++;
                 bMP.Text = Resources.GetQuantityString(Resource.Plurals.numberOfClicks, countMP, countMP);
             };
 
             bBack.Click += delegate
             {
+                StartService(bss);
                 Finish();
             };
-
-            Intent ns = new Intent(this, typeof(NotificationService));
-            if (settings.notifications)
-            {
-                StartService(ns);
-            }
-            else if (!settings.notifications)
-            {
-                StopService(ns);
-            }
         }
     }
 }

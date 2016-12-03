@@ -100,35 +100,26 @@ namespace NFCFighters
                     break;
             }
 
-            MediaPlayer _player;
+            Intent bss = new Intent(ApplicationContext, typeof(ButtonSoundService));
 
             bPlay.Click += delegate
             {
-                _player = MediaPlayer.Create(this, Resource.Raw.button);
-                _player.Start();
+                StartService(bss);
                 var intent = new Intent(this, typeof(PlayActivity));
                 StartActivity(intent);
-                while (_player.IsPlaying) { }
-                _player.Release();
             };
 
             bSettings.Click += delegate
             {
-                _player = MediaPlayer.Create(this, Resource.Raw.button);
-                _player.Start();
+                StartService(bss);
                 Finish();
                 var intent = new Intent(this, typeof(SettingsActivity));
 				StartActivity(intent);
-                while (_player.IsPlaying) { }
-                _player.Release();
             };
 
 			bExit.Click += delegate
             {
-                _player = MediaPlayer.Create(this, Resource.Raw.button);
-                _player.Start();
-                while (_player.IsPlaying) { }
-                _player.Release();
+                StartService(bss);
                 Exit();
 			};
 
