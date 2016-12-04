@@ -68,16 +68,13 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="Xamarin.Android.Support.v4, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Xamarin.Android.Support.v4.23.4.0.1\lib\MonoAndroid403\Xamarin.Android.Support.v4.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FXSoundService.cs" />
+    <Compile Include="Services\MusicSoundService.cs" />
+    <Compile Include="Services\FXSoundService.cs" />
     <Compile Include="Color.cs" />
     <Compile Include="MainActivity.cs" />
-    <Compile Include="NotificationService.cs" />
+    <Compile Include="Services\NotificationService.cs" />
     <Compile Include="PlayActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -109,7 +106,9 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\logo.png" />
-    <AndroidResource Include="Resources\layout-port\Main.axml" />
+    <AndroidResource Include="Resources\layout-port\Main.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
     <AndroidResource Include="Resources\drawable\backgr_land.png" />
     <AndroidResource Include="Resources\drawable\backgr_port.png" />
     <AndroidResource Include="Resources\layout-port\Settings.axml">
@@ -150,13 +149,10 @@
     <AndroidResource Include="Resources\drawable\settings.png" />
   </ItemGroup>
   <ItemGroup>
-    <XamarinComponentReference Include="xamandroidsupportv4-18">
-      <Visible>False</Visible>
-      <Version>23.4.0.1</Version>
-    </XamarinComponentReference>
+    <AndroidResource Include="Resources\raw\button.mp3" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\raw\button.mp3" />
+    <AndroidResource Include="Resources\raw\menu.mp3" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

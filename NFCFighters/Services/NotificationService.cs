@@ -4,11 +4,10 @@ using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Util;
-using Android.Support.V4.App;
 using System.Threading.Tasks;
 using System.Threading;
 
-namespace NFCFighters
+namespace NFCFighters.Services
 {
     [Service]
     class NotificationService : Service
@@ -44,16 +43,31 @@ namespace NFCFighters
         
         private void ShowNotification(int id)
         {
-            NotificationCompat.Builder builder = new NotificationCompat.Builder(context)
-            .SetAutoCancel(true)                    // Dismiss from the notif. area when clicked
+            Intent resultIntent = new Intent(this, typeof(MainActivity));
+
+            TaskStackBuilder stackBuilder = TaskStackBuilder.Create(this);
+            stackBuilder.AddParentStack(Java.Lang.Class.FromType(typeof(MainActivity)));
+            stackBuilder.AddNextIntent(resultIntent);
+
+            // Create the PendingIntent with the back stack:            
+            PendingIntent resultPendingIntent =
+                stackBuilder.GetPendingIntent(0, PendingIntentFlags.UpdateCurrent);
+
+            Notification.Builder builder = new Notification.Builder(context)
+            .SetAutoCancel(true)
+            .SetContentIntent(resultPendingIntent)
+            .SetSmallIcon(Resource.Mipmap.Icon)
             .SetContentTitle(nTitle[id])      // Set its title
             .SetContentText(nContent[id]) // The message to display.
-            .SetSmallIcon(Resource.Mipmap.Icon);
+            .SetStyle(new Notification.BigTextStyle()
+                .BigText(nContent[id]));
 
-            // Finally, publish the notification:
+            Notification notif = builder.Build();
+
             NotificationManager notificationManager = context.GetSystemService(Context.NotificationService) as NotificationManager;
-            notificationManager.Notify(NotificationId, builder.Build());
+            notificationManager.Notify(NotificationId, notif);
         }
+
         public async void StartNotifications(CancellationToken ct)
         {
             bool cont = true;
@@ -70,7 +84,7 @@ namespace NFCFighters
                         break;
                     }
                     ShowNotification(count);
-                    await Task.Delay(10000);
+                    await Task.Delay(25000);
                     count++;
                 }
             }

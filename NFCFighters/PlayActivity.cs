@@ -12,6 +12,7 @@ using Android.Widget;
 using Android.Graphics.Drawables;
 using Android.Graphics;
 using Android.Util;
+using NFCFighters.Services;
 
 namespace NFCFighters
 {

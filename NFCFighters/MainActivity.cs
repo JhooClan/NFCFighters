@@ -6,13 +6,10 @@ using Android.Content;
 using Android.Util;
 using Android.Graphics.Drawables;
 using Android.Graphics;
-using Android.Support.V4.App;
-using System.Threading;
 using Android.Content.Res;
-using System.Threading.Tasks;
-using System;
-using Android.Media;
+
 using NFCFighters.Utils;
+using NFCFighters.Services;
 
 namespace NFCFighters
 {
@@ -128,7 +125,7 @@ namespace NFCFighters
             Intent ns = new Intent(ApplicationContext, typeof(NotificationService));
             if (settings.notifications)
             {
-                if (!ServiceUtils.IsMyServiceRunning(this, typeof(NotificationService).ToString()))
+                if (!ServiceUtils.IsMyServiceRunning(ApplicationContext, typeof(NotificationService).ToString()))
                 {
                     StartService(ns);
                 }
@@ -136,6 +133,13 @@ namespace NFCFighters
             else if (!settings.notifications)
             {
                 StopService(ns);
+            }
+            
+            if (!ServiceUtils.IsMyServiceRunning(ApplicationContext, typeof(MusicSoundService).ToString().ToLower()))
+            {
+                Intent mss = new Intent(ApplicationContext, typeof(MusicSoundService));
+                mss.SetAction(MusicSoundService.MenuSong);
+                StartService(mss);
             }
         }
 
@@ -151,6 +155,8 @@ namespace NFCFighters
             alert.SetMessage(Resources.GetString(Resource.String.doexit));
             alert.SetPositiveButton(Resource.String.yes, (senderAlert, args) =>
             {
+                StopService(new Intent(ApplicationContext, typeof(NotificationService)));
+                StopService(new Intent(ApplicationContext, typeof(MusicSoundService)));
                 System.Environment.Exit(0);
             });
             alert.SetNegativeButton(Resource.String.no, (senderAlert, args) =>

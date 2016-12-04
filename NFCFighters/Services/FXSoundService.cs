@@ -12,7 +12,7 @@ using Android.Widget;
 using Android.Util;
 using Android.Media;
 
-namespace NFCFighters
+namespace NFCFighters.Services
 {
     [Service]
     [IntentFilter(new[] { ButtonSound })]
@@ -30,7 +30,6 @@ namespace NFCFighters
                     resId = Resource.Raw.button;
                     break;
             }
-            Toast.MakeText(ApplicationContext, Resource.String.app_name, ToastLength.Short);
             _player = MediaPlayer.Create(this, resId);
             _player.Start();
             return StartCommandResult.NotSticky;
