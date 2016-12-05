@@ -11,6 +11,7 @@ using Android.Views;
 using Android.Widget;
 using Android.Util;
 using Android.Media;
+using System.Threading.Tasks;
 
 namespace NFCFighters.Services
 {
@@ -19,32 +20,30 @@ namespace NFCFighters.Services
     class FXSoundService : Service
     {
         public const string ButtonSound = "BUTTONSFX";
-        MediaPlayer _player;
 
         public override StartCommandResult OnStartCommand(Intent intent, StartCommandFlags flags, int startId)
         {
-            int resId = 0;
             switch (intent.Action)
             {
                 case ButtonSound:
-                    resId = Resource.Raw.button;
+                    Task.Factory.StartNew(() => Play(Resource.Raw.button));
                     break;
             }
-            _player = MediaPlayer.Create(this, resId);
-            _player.Start();
             return StartCommandResult.NotSticky;
+        }
+
+        public void Play(int resId)
+        {
+            MediaPlayer _player = MediaPlayer.Create(this, resId);
+            _player.Start();
+            while (_player.IsPlaying) { }
+            _player.Reset();
+            _player.Release();
         }
 
         public override IBinder OnBind(Intent intent)
         {
             throw new NotImplementedException();
-        }
-
-        public override void OnDestroy()
-        {
-            while (_player.IsPlaying) { }
-            _player.Release();
-            base.OnDestroy();
         }
     }
 }

@@ -53,8 +53,8 @@ namespace NFCFighters.Services
             {
                 _player.Stop();
                 _player.Reset();
-                _player.SetAudioStreamType(Stream.Music);
                 _player.SetDataSource(this, Android.Net.Uri.Parse("android.resource://" + this.PackageName + "/" + resId));
+                _player.SetAudioStreamType(Stream.Music);
                 _player.Looping = true;
                 currentPlaying = resId;
                 _player.Prepare();
