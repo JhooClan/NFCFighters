@@ -4,6 +4,7 @@ using Android.OS;
 using Android.Views;
 using Android.Widget;
 using Android.Content;
+using NFCFighters.Services;
 
 namespace NFCFighters
 {
@@ -77,6 +78,7 @@ namespace NFCFighters
 			alert.SetMessage(Resources.GetString(Resource.String.configok));
 			alert.SetNeutralButton(Resource.String.ok, (senderAlert, args) =>
 			{
+                StopService(new Intent(ApplicationContext, typeof(NotificationService)));
                 var intent = new Intent(this, typeof(MainActivity));
                 StartActivity(intent);
                 Finish();
@@ -88,6 +90,7 @@ namespace NFCFighters
 
         public override void OnBackPressed()
         {
+            StopService(new Intent(ApplicationContext, typeof(NotificationService)));
             var intent = new Intent(this, typeof(MainActivity));
             StartActivity(intent);
             Finish();

@@ -13,6 +13,7 @@ using Android.Graphics.Drawables;
 using Android.Graphics;
 using Android.Util;
 using NFCFighters.Services;
+using NFCFighters.Utils;
 
 namespace NFCFighters
 {
@@ -55,7 +56,14 @@ namespace NFCFighters
             if (settings.nightmode)
             {
                 LinearLayout main = FindViewById<LinearLayout>(Resource.Id.mainLayout);
-                main.SetBackgroundResource(Resource.Drawable.backgr_land_day);
+                if (surfaceOrientation == SurfaceOrientation.Rotation0 || surfaceOrientation == SurfaceOrientation.Rotation180)
+                {
+                    main.SetBackgroundResource(Resource.Drawable.backgr_night_port);
+                }
+                else
+                {
+                    main.SetBackgroundResource(Resource.Drawable.backgr_night_land);
+                }
             }
 
             Button bSP = FindViewById<Button>(Resource.Id.buttonSP);
@@ -107,6 +115,12 @@ namespace NFCFighters
                 StartService(bss);
                 countSP++;
                 bSP.Text = Resources.GetQuantityString(Resource.Plurals.numberOfClicks, countSP, countSP);
+                if (countSP == 58 && countMP == 85)
+                {
+                    Intent mss = new Intent(ApplicationContext, typeof(MusicSoundService));
+                    mss.SetAction(MusicSoundService.BossTheme);
+                    StartService(mss);
+                }
             };
 
             bMP.Click += delegate
@@ -114,6 +128,12 @@ namespace NFCFighters
                 StartService(bss);
                 countMP++;
                 bMP.Text = Resources.GetQuantityString(Resource.Plurals.numberOfClicks, countMP, countMP);
+                if (countSP == 58 && countMP == 85)
+                {
+                    Intent mss = new Intent(ApplicationContext, typeof(MusicSoundService));
+                    mss.SetAction(MusicSoundService.BossTheme);
+                    StartService(mss);
+                }
             };
 
             bBack.Click += delegate
@@ -121,6 +141,22 @@ namespace NFCFighters
                 StartService(bss);
                 Finish();
             };
+        }
+
+        protected override void OnPause()
+        {
+            base.OnPause();
+            Intent mss = new Intent(ApplicationContext, typeof(MusicSoundService));
+            mss.SetAction(MusicSoundService.ActionPause);
+            StartService(mss);
+        }
+
+        protected override void OnResume()
+        {
+            base.OnResume();
+            Intent mss = new Intent(ApplicationContext, typeof(MusicSoundService));
+            mss.SetAction(MusicSoundService.ActionResume);
+            StartService(mss);
         }
     }
 }

@@ -54,7 +54,7 @@ namespace NFCFighters.Services
                 stackBuilder.GetPendingIntent(0, PendingIntentFlags.UpdateCurrent);
 
             Notification.Builder builder = new Notification.Builder(context)
-            .SetAutoCancel(true)
+            .SetAutoCancel(false)
             .SetContentIntent(resultPendingIntent)
             .SetSmallIcon(Resource.Mipmap.Icon)
             .SetContentTitle(nTitle[id])      // Set its title

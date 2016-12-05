@@ -109,8 +109,8 @@
     <AndroidResource Include="Resources\layout-port\Main.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\drawable\backgr_land.png" />
-    <AndroidResource Include="Resources\drawable\backgr_port.png" />
+    <AndroidResource Include="Resources\drawable\backgr_night_land.png" />
+    <AndroidResource Include="Resources\drawable\backgr_night_port.png" />
     <AndroidResource Include="Resources\layout-port\Settings.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
@@ -125,10 +125,10 @@
     <AndroidResource Include="Resources\drawable\backg_button3.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\backgr_land_day.png" />
+    <AndroidResource Include="Resources\drawable\backgr_land.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\backgr_port_day.png" />
+    <AndroidResource Include="Resources\drawable\backgr_port.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\multiplayer.png" />
@@ -153,6 +153,9 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\raw\menu.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\raw\boss.mp3" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

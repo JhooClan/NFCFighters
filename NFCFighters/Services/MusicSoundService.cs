@@ -1,37 +1,47 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 using Android.App;
 using Android.Content;
 using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
-using Android.Util;
 using Android.Media;
 
 namespace NFCFighters.Services
 {
     [Service]
-    [IntentFilter(new[] { MenuSong, ActionStop })]
+    [IntentFilter(new[] { Initialize, ActionStop, ActionResume, ActionPause, MenuTheme, BossTheme })]
     class MusicSoundService : Service
     {
-        public const string MenuSong = "BUTTONSFX";
+        public const string Initialize = "INIT";
         public const string ActionStop = "STOP";
-        MediaPlayer _player = new MediaPlayer();
+        public const string ActionResume = "RESUME";
+        public const string ActionPause = "PAUSE";
+        public const string MenuTheme = "MENUTHEME";
+        public const string BossTheme = "BOSSTHEME";
+        MediaPlayer _player;
+        int currentPlaying;
 
         public override StartCommandResult OnStartCommand(Intent intent, StartCommandFlags flags, int startId)
         {
             switch (intent.Action)
             {
-                case MenuSong:
-                    Stop();
-                    Play(Resource.Raw.menu);
+                case Initialize:
+                    _player = new MediaPlayer();
+                    currentPlaying = -1;
                     break;
                 case ActionStop:
                     Stop();
+                    break;
+                case ActionResume:
+                    Resume();
+                    break;
+                case ActionPause:
+                    Pause();
+                    break;
+                case MenuTheme:
+                    Play(Resource.Raw.menu);
+                    break;
+                case BossTheme:
+                    Play(Resource.Raw.boss);
                     break;
             }
             return StartCommandResult.RedeliverIntent;
@@ -39,16 +49,34 @@ namespace NFCFighters.Services
 
         public void Play(int resId)
         {
-            _player = MediaPlayer.Create(this, resId);
-            while (!_player.IsPlaying)
+            if (currentPlaying != resId)
             {
-                _player.Start();
+                _player.Stop();
+                _player.Reset();
+                _player.SetAudioStreamType(Stream.Music);
+                _player.SetDataSource(this, Android.Net.Uri.Parse("android.resource://" + this.PackageName + "/" + resId));
+                _player.Looping = true;
+                currentPlaying = resId;
+                _player.Prepare();
             }
+            _player.Start();
+        }
+
+        public void Resume()
+        {
+            _player.Start();
+        }
+
+        public void Pause()
+        {
+            _player.Pause();
         }
 
         public void Stop()
         {
             _player.Stop();
+            _player.Reset();
+            currentPlaying = -1;
         }
 
         public override IBinder OnBind(Intent intent)

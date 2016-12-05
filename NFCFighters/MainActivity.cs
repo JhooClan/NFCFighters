@@ -51,7 +51,14 @@ namespace NFCFighters
             if (settings.nightmode)
             {
                 LinearLayout main = FindViewById<LinearLayout>(Resource.Id.mainLayout);
-                main.SetBackgroundResource(Resource.Drawable.backgr_land_day);
+                if (surfaceOrientation == SurfaceOrientation.Rotation0 || surfaceOrientation == SurfaceOrientation.Rotation180)
+                {
+                    main.SetBackgroundResource(Resource.Drawable.backgr_night_port);
+                }
+                else
+                {
+                    main.SetBackgroundResource(Resource.Drawable.backgr_night_land);
+                }
             }
 
 
@@ -125,20 +132,19 @@ namespace NFCFighters
             Intent ns = new Intent(ApplicationContext, typeof(NotificationService));
             if (settings.notifications)
             {
-                if (!ServiceUtils.IsMyServiceRunning(ApplicationContext, typeof(NotificationService).ToString()))
-                {
-                    StartService(ns);
-                }
+                StartService(ns);
             }
             else if (!settings.notifications)
             {
                 StopService(ns);
             }
             
-            if (!ServiceUtils.IsMyServiceRunning(ApplicationContext, typeof(MusicSoundService).ToString().ToLower()))
+            if (!ServiceUtils.IsMyServiceRunning(ApplicationContext, typeof(MusicSoundService).Name))
             {
                 Intent mss = new Intent(ApplicationContext, typeof(MusicSoundService));
-                mss.SetAction(MusicSoundService.MenuSong);
+                mss.SetAction(MusicSoundService.Initialize);
+                StartService(mss);
+                mss.SetAction(MusicSoundService.MenuTheme);
                 StartService(mss);
             }
         }
@@ -166,6 +172,22 @@ namespace NFCFighters
 
             Dialog dialog = alert.Create();
             dialog.Show();
+        }
+
+        protected override void OnPause()
+        {
+            base.OnPause();
+            Intent mss = new Intent(ApplicationContext, typeof(MusicSoundService));
+            mss.SetAction(MusicSoundService.ActionPause);
+            StartService(mss);
+        }
+
+        protected override void OnResume()
+        {
+            base.OnResume();
+            Intent mss = new Intent(ApplicationContext, typeof(MusicSoundService));
+            mss.SetAction(MusicSoundService.ActionResume);
+            StartService(mss);
         }
     }
 }

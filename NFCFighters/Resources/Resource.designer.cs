@@ -79,13 +79,13 @@ namespace NFCFighters
 			public const int backgr_land = 2130837508;
 			
 			// aapt resource value: 0x7f020005
-			public const int backgr_land_day = 2130837509;
+			public const int backgr_night_land = 2130837509;
 			
 			// aapt resource value: 0x7f020006
-			public const int backgr_port = 2130837510;
+			public const int backgr_night_port = 2130837510;
 			
 			// aapt resource value: 0x7f020007
-			public const int backgr_port_day = 2130837511;
+			public const int backgr_port = 2130837511;
 			
 			// aapt resource value: 0x7f020008
 			public const int exit = 2130837512;
@@ -255,10 +255,13 @@ namespace NFCFighters
 		{
 			
 			// aapt resource value: 0x7f050000
-			public const int button = 2131034112;
+			public const int boss = 2131034112;
 			
 			// aapt resource value: 0x7f050001
-			public const int menu = 2131034113;
+			public const int button = 2131034113;
+			
+			// aapt resource value: 0x7f050002
+			public const int menu = 2131034114;
 			
 			static Raw()
 			{

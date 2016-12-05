@@ -18,7 +18,7 @@ namespace NFCFighters.Utils
         public static bool IsMyServiceRunning(Context ctx, string serviceName)
         {
             ActivityManager manager = (ActivityManager)ctx.GetSystemService(Context.ActivityService);
-            return manager.GetRunningServices(int.MaxValue).Any(service => service.Service.ShortClassName.ToLower() == serviceName);
+            return manager.GetRunningServices(int.MaxValue).Any(service => service.Service.ClassName.ToLower().Contains(serviceName.ToLower()));
         }
     }
 }
