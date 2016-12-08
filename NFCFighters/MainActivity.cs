@@ -106,6 +106,8 @@ namespace NFCFighters
             }
 
             Intent bss = new Intent(ApplicationContext, typeof(FXSoundService));
+            bss.SetAction(FXSoundService.VolumeSound);
+            StartService(bss);
             bss.SetAction(FXSoundService.ButtonSound);
 
             bPlay.Click += delegate

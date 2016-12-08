@@ -9,6 +9,8 @@ namespace NFCFighters
 		public int colorConfig { get; set; }
         public bool nightmode { get; set; }
         public bool notifications { get; set; }
+        public float music { get; set; }
+        public float sounds { get; set; }
 
         public Settings(Settings set)
 		{
@@ -16,6 +18,8 @@ namespace NFCFighters
             colorConfig = set.colorConfig;
             nightmode = set.nightmode;
             notifications = set.notifications;
+            music = set.music;
+            sounds = set.sounds;
         }
 
         public Settings() : this(LoadSettings()) {}
@@ -28,6 +32,8 @@ namespace NFCFighters
                 colorConfig = Color.COLOR_GREEN;
                 nightmode = false;
                 notifications = true;
+                music = 0.5f;
+                sounds = 0.75f;
             }
         }
 

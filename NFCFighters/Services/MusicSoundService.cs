@@ -17,8 +17,10 @@ namespace NFCFighters.Services
         public const string ActionPause = "PAUSE";
         public const string MenuTheme = "MENUTHEME";
         public const string BossTheme = "BOSSTHEME";
-        MediaPlayer _player;
-        int currentPlaying;
+
+        private MediaPlayer _player;
+        private int currentPlaying;
+        private float volume;
 
         public override StartCommandResult OnStartCommand(Intent intent, StartCommandFlags flags, int startId)
         {
@@ -26,6 +28,7 @@ namespace NFCFighters.Services
             {
                 case Initialize:
                     _player = new MediaPlayer();
+                    volume = Settings.LoadSettings().music;
                     currentPlaying = -1;
                     break;
                 case ActionStop:
@@ -57,6 +60,7 @@ namespace NFCFighters.Services
                 _player.SetAudioStreamType(Stream.Music);
                 _player.Looping = true;
                 currentPlaying = resId;
+                _player.SetVolume(volume, volume);
                 _player.Prepare();
             }
             _player.Start();
