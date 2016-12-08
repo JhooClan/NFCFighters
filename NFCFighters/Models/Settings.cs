@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System.IO;
 
-namespace NFCFighters
+namespace NFCFighters.Models
 {
 	public class Settings
 	{

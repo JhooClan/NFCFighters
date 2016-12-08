@@ -10,6 +10,7 @@ using Android.Content.Res;
 
 using NFCFighters.Utils;
 using NFCFighters.Services;
+using NFCFighters.Models;
 
 namespace NFCFighters
 {

@@ -4,6 +4,7 @@ using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Media;
+using NFCFighters.Models;
 
 namespace NFCFighters.Services
 {

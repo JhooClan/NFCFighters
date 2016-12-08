@@ -4,7 +4,9 @@ using Android.OS;
 using Android.Views;
 using Android.Widget;
 using Android.Content;
+
 using NFCFighters.Services;
+using NFCFighters.Models;
 
 namespace NFCFighters
 {
