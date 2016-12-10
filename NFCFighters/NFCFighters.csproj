@@ -70,6 +70,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LocalizationActivity.cs" />
     <Compile Include="Services\MusicSoundService.cs" />
     <Compile Include="Services\FXSoundService.cs" />
     <Compile Include="Color.cs" />
@@ -87,8 +88,13 @@
     <None Include="Properties\AndroidManifest.xml" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="packages.config" />
-    <AndroidResource Include="Resources\layout-port\Play.axml" />
+    <AndroidResource Include="Resources\layout-port\Play.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
     <AndroidResource Include="Resources\layout-land\Play.axml" />
+    <AndroidResource Include="Resources\layout-port\Localization.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout-land\Main.axml">

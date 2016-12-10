@@ -7,6 +7,7 @@ using Android.Graphics.Drawables;
 using Android.Graphics;
 using Android.Util;
 
+using NFCFighters.Utils;
 using NFCFighters.Services;
 using NFCFighters.Models;
 
@@ -109,7 +110,7 @@ namespace NFCFighters
 
             bSP.Click += delegate
             {
-                StartService(bss);
+                /*StartService(bss);
                 countSP++;
                 bSP.Text = Resources.GetQuantityString(Resource.Plurals.numberOfClicks, countSP, countSP);
                 if (countSP == 58 && countMP == 85)
@@ -117,7 +118,10 @@ namespace NFCFighters
                     Intent mss = new Intent(ApplicationContext, typeof(MusicSoundService));
                     mss.SetAction(MusicSoundService.BossTheme);
                     StartService(mss);
-                }
+                }*/
+                StartService(bss);
+                var intent = new Intent(this, typeof(Localization));
+                StartActivity(intent);
             };
 
             bMP.Click += delegate
