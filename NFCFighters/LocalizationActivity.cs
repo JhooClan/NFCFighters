@@ -14,12 +14,18 @@ using Android.Locations;
 using NFCFighters.Utils;
 using NFCFighters.Services;
 using NFCFighters.Models;
+using System.Threading.Tasks;
 
 namespace NFCFighters
 {
     [Activity(Label = "Localization")]
-    public class Localization : Activity
+    public class Localization : Activity, ILocationListener
     {
+        Location _currentLocation;
+        LocationManager _locationManager;
+        string _locationProvider;
+        TextView lat, lon, dir;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -44,30 +50,96 @@ namespace NFCFighters
                 }
             }
 
-            LocationManager locationManager = (LocationManager) GetSystemService(Context.LocationService);
-            Criteria criteria = new Criteria();
+            lat = FindViewById<TextView>(Resource.Id.textLat);
+            lon = FindViewById<TextView>(Resource.Id.textLon);
+            dir = FindViewById<TextView>(Resource.Id.textDir);
 
-            Location location = locationManager.GetLastKnownLocation(locationManager.GetBestProvider(criteria, false));
-            double latitude = location.Latitude;
-            double longitud = location.Longitude;
+            InitializeLocationManager();
 
-            TextView lat = FindViewById<TextView>(Resource.Id.textLat);
-            lat.Text = latitude.ToString();
+        }
+        void InitializeLocationManager()
+        {
+            _locationManager = (LocationManager)GetSystemService(LocationService);
+            Criteria criteriaForLocationService = new Criteria
+            {
+                Accuracy = Accuracy.Fine
+            };
+            IList<string> acceptableLocationProviders = _locationManager.GetProviders(criteriaForLocationService, true);
 
-            TextView lon = FindViewById<TextView>(Resource.Id.textLon);
-            lon.Text = longitud.ToString();
+            if (acceptableLocationProviders.Any())
+            {
+                _locationProvider = acceptableLocationProviders.First();
+            }
+            else
+            {
+                _locationProvider = string.Empty;
+            }
+            //Log.Debug(TAG, "Using " + _locationProvider + ".");
+        }
 
+        public async void OnLocationChanged(Location location) {
+            _currentLocation = location;
+            if (_currentLocation == null)
+            {
+                lat.Text = "Imposible determinar tu ubicacion";
+            }
+            else
+            {
+                lat.Text = string.Format("{0:f6}", _currentLocation.Latitude);
+                lon.Text = string.Format("{0:f6}", _currentLocation.Longitude);
+                Address address = await ReverseGeocodeCurrentLocation();
+                DisplayAddress(address);
+            }
+        }
+
+        public void OnProviderDisabled(string provider) {
+            Toast.MakeText(this, "GPS DESACTIVADO", ToastLength.Short).Show();
+        }
+
+        public void OnProviderEnabled(string provider) {
+            Toast.MakeText(this, "GPS ACTIVADO", ToastLength.Short).Show();
+        }
+
+        public void OnStatusChanged(string provider, Availability status, Bundle extras) { }
+
+        protected override void OnResume()
+        {
+            base.OnResume();
+            _locationManager.RequestLocationUpdates(_locationProvider, 0, 0, this);
+        }
+
+        protected override void OnPause()
+        {
+            base.OnPause();
+            _locationManager.RemoveUpdates(this);
+        }
+
+        async Task<Address> ReverseGeocodeCurrentLocation()
+        {
             Geocoder geocoder = new Geocoder(this);
-            IList<Address> direc = geocoder.GetFromLocation(latitude, longitud, 1);
+            IList<Address> addressList =
+                await geocoder.GetFromLocationAsync(_currentLocation.Latitude, _currentLocation.Longitude, 10);
 
-            
-            List<Address> direc2 = direc.ToList<Address>();
-            TextView dir = FindViewById<TextView>(Resource.Id.textDir);
-            dir.Text = direc[0].ToString(); //address.IndexOf("addressLines").ToString();
+            Address address = addressList.FirstOrDefault();
+            return address;
+        }
 
-
-            //Toast.MakeText(this, latitude.ToString(), ToastLength.Short).Show();
-
+        void DisplayAddress(Address address)
+        {
+            if (address != null)
+            {
+                StringBuilder deviceAddress = new StringBuilder();
+                for (int i = 0; i < address.MaxAddressLineIndex; i++)
+                {
+                    deviceAddress.Append(address.GetAddressLine(i)+"\n");
+                }
+                // Remove the last comma from the end of the address.
+                dir.Text = deviceAddress.ToString();
+            }
+            else
+            {
+                dir.Text = "Imposible Determinar tu Dirección";
+            }
         }
     }
         
