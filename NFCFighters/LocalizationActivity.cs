@@ -87,8 +87,16 @@ namespace NFCFighters
             {
                 lat.Text = string.Format("{0:f6}", _currentLocation.Latitude);
                 lon.Text = string.Format("{0:f6}", _currentLocation.Longitude);
-                Address address = await ReverseGeocodeCurrentLocation();
-                DisplayAddress(address);
+                try
+                {
+                    Address address = await ReverseGeocodeCurrentLocation();
+                    DisplayAddress(address);
+                }
+                catch
+                {
+
+                }
+                
             }
         }
 
