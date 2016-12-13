@@ -19,7 +19,7 @@ using System.Threading.Tasks;
 namespace NFCFighters
 {
     [Activity(Label = "Localization")]
-    public class Localization : Activity, ILocationListener
+    public class LocalizationActivity : Activity, ILocationListener
     {
         Location _currentLocation;
         LocationManager _locationManager;
@@ -53,6 +53,22 @@ namespace NFCFighters
             lat = FindViewById<TextView>(Resource.Id.textLat);
             lon = FindViewById<TextView>(Resource.Id.textLon);
             dir = FindViewById<TextView>(Resource.Id.textDir);
+            Button fbt = FindViewById<Button>(Resource.Id.fightBt);
+            Button map = FindViewById<Button>(Resource.Id.MapBt);
+
+            fbt.Click += delegate
+            {
+                var intent = new Intent(this, typeof(FightActivity));
+                StartActivity(intent);
+            };
+
+            map.Click += delegate
+            {
+                /*var geoUri = Android.Net.Uri.Parse("geo:42.374260,-71.120824?z=20");
+                var mapIntent = new Intent(Intent.ActionView, geoUri);*/
+                var mapIntent = new Intent(this, typeof(MapActivity));
+                StartActivity(mapIntent);
+            };
 
             InitializeLocationManager();
 
@@ -77,7 +93,8 @@ namespace NFCFighters
             //Log.Debug(TAG, "Using " + _locationProvider + ".");
         }
 
-        public async void OnLocationChanged(Location location) {
+        public async void OnLocationChanged(Location location)
+        {
             _currentLocation = location;
             if (_currentLocation == null)
             {
@@ -96,15 +113,17 @@ namespace NFCFighters
                 {
 
                 }
-                
+
             }
         }
 
-        public void OnProviderDisabled(string provider) {
+        public void OnProviderDisabled(string provider)
+        {
             Toast.MakeText(this, "GPS DESACTIVADO", ToastLength.Short).Show();
         }
 
-        public void OnProviderEnabled(string provider) {
+        public void OnProviderEnabled(string provider)
+        {
             Toast.MakeText(this, "GPS ACTIVADO", ToastLength.Short).Show();
         }
 
@@ -139,7 +158,7 @@ namespace NFCFighters
                 StringBuilder deviceAddress = new StringBuilder();
                 for (int i = 0; i < address.MaxAddressLineIndex; i++)
                 {
-                    deviceAddress.Append(address.GetAddressLine(i)+"\n");
+                    deviceAddress.Append(address.GetAddressLine(i) + "\n");
                 }
                 // Remove the last comma from the end of the address.
                 dir.Text = deviceAddress.ToString();
@@ -150,5 +169,5 @@ namespace NFCFighters
             }
         }
     }
-        
+
 }

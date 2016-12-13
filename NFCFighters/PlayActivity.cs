@@ -36,7 +36,7 @@ namespace NFCFighters
                 bHeight = bHeight / 2;
             }
             bHeight = bHeight / 5;
-            
+
             if (settings.invertControls && !(surfaceOrientation == SurfaceOrientation.Rotation0 ||
                 surfaceOrientation == SurfaceOrientation.Rotation180))
             {
@@ -101,7 +101,6 @@ namespace NFCFighters
                     bBack.SetBackgroundResource(Resource.Drawable.backg_button3);
                     break;
             }
-            int countSP = 0, countMP = 0;
 
             Intent bss = new Intent(ApplicationContext, typeof(FXSoundService));
             bss.SetAction(FXSoundService.VolumeSound);
@@ -110,31 +109,16 @@ namespace NFCFighters
 
             bSP.Click += delegate
             {
-                /*StartService(bss);
-                countSP++;
-                bSP.Text = Resources.GetQuantityString(Resource.Plurals.numberOfClicks, countSP, countSP);
-                if (countSP == 58 && countMP == 85)
-                {
-                    Intent mss = new Intent(ApplicationContext, typeof(MusicSoundService));
-                    mss.SetAction(MusicSoundService.BossTheme);
-                    StartService(mss);
-                }*/
                 StartService(bss);
-                var intent = new Intent(this, typeof(Localization));
+                var intent = new Intent(this, typeof(LocalizationActivity));
                 StartActivity(intent);
             };
 
             bMP.Click += delegate
             {
                 StartService(bss);
-                countMP++;
-                bMP.Text = Resources.GetQuantityString(Resource.Plurals.numberOfClicks, countMP, countMP);
-                if (countSP == 58 && countMP == 85)
-                {
-                    Intent mss = new Intent(ApplicationContext, typeof(MusicSoundService));
-                    mss.SetAction(MusicSoundService.BossTheme);
-                    StartService(mss);
-                }
+                var intent = new Intent(this, typeof(ReadNFCActivity));
+                StartActivity(intent);
             };
 
             bBack.Click += delegate

@@ -70,6 +70,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ReadNFCActivity.cs" />
+    <Compile Include="MapActivity.cs" />
+    <Compile Include="FightActivity.cs" />
     <Compile Include="LocalizationActivity.cs" />
     <Compile Include="Services\MusicSoundService.cs" />
     <Compile Include="Services\FXSoundService.cs" />
@@ -93,6 +96,15 @@
     </AndroidResource>
     <AndroidResource Include="Resources\layout-land\Play.axml" />
     <AndroidResource Include="Resources\layout-port\Localization.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout-port\Fight.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout-port\Map.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout-port\ReadNFC.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
