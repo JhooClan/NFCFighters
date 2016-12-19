@@ -6,69 +6,69 @@
     android:layout_height="match_parent"
     android:id="@+id/mainLayout"
     android:background="@drawable/backgr_port">
-  <LinearLayout
-      android:id="@+id/linearLayout1"
-      android:orientation="horizontal"
-      android:layout_width="match_parent"
-      android:layout_height="0dip"
-      android:layout_weight="1">
-    <ImageView
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:id="@+id/imgLogo"
-        android:src="@drawable/logo"
-        android:scaleType="centerInside" />
-  </LinearLayout>
-  <LinearLayout
-      android:orientation="vertical"
-      android:layout_width="match_parent"
-      android:layout_height="0dip"
-      android:layout_gravity="center"
-      android:layout_weight="1"
-      android:layout_below="@+id/linearLayout1"
-      android:id="@+id/linearLayout2">
-    <TextView
-        android:text="Latitud:"
-        android:textAppearance="?android:attr/textAppearanceMedium"
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView1" />
-    <TextView
-        android:text="Obteniendo su ubicación"
+        android:layout_height="0dip"
+        android:layout_weight="1">
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/imgLogo"
+            android:src="@drawable/logo"
+            android:scaleType="centerInside" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textLat" />
-    <TextView
-        android:text="Longitud: "
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView2" />
-    <TextView
-        android:text="Obteniendo su ubicación"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textLon" />
-    <TextView
-        android:text="Dirección"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView3" />
-    <TextView
-        android:text="Obteniendo su ubicación"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textDir" />
-    <Button
-        android:id="@+id/fightBt"
-        android:text="Fight!"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    <Button
-        android:id="@+id/MapBt"
-        android:text="Ver Mapa"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-  </LinearLayout>
+        android:layout_height="0dip"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:layout_below="@+id/linearLayout1"
+        android:id="@+id/linearLayout2">
+        <TextView
+            android:text="Latitud:"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView1" />
+        <TextView
+            android:text="Obteniendo su ubicación"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textLat" />
+        <TextView
+            android:text="Longitud: "
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView2" />
+        <TextView
+            android:text="Obteniendo su ubicación"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textLon" />
+        <TextView
+            android:text="Dirección"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView3" />
+        <TextView
+            android:text="Obteniendo su ubicación"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textDir" />
+        <Button
+            android:id="@+id/fightBt"
+            android:text="Fight!"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/MapBt"
+            android:text="Ver Mapa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
 </LinearLayout>

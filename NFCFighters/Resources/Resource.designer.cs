@@ -31,11 +31,11 @@ namespace NFCFighters
 		public partial class Array
 		{
 			
-			// aapt resource value: 0x7f0a0001
-			public const int notificationContent = 2131361793;
+			// aapt resource value: 0x7f0b0001
+			public const int notificationContent = 2131427329;
 			
-			// aapt resource value: 0x7f0a0000
-			public const int notificationTitle = 2131361792;
+			// aapt resource value: 0x7f0b0000
+			public const int notificationTitle = 2131427328;
 			
 			static Array()
 			{
@@ -132,68 +132,68 @@ namespace NFCFighters
 		public partial class Color
 		{
 			
-			// aapt resource value: 0x7f080008
-			public const int common_action_bar_splitter = 2131230728;
+			// aapt resource value: 0x7f090008
+			public const int common_action_bar_splitter = 2131296264;
 			
-			// aapt resource value: 0x7f080011
-			public const int common_google_signin_btn_text_dark = 2131230737;
+			// aapt resource value: 0x7f090011
+			public const int common_google_signin_btn_text_dark = 2131296273;
 			
-			// aapt resource value: 0x7f080009
-			public const int common_google_signin_btn_text_dark_default = 2131230729;
+			// aapt resource value: 0x7f090009
+			public const int common_google_signin_btn_text_dark_default = 2131296265;
 			
-			// aapt resource value: 0x7f08000b
-			public const int common_google_signin_btn_text_dark_disabled = 2131230731;
+			// aapt resource value: 0x7f09000b
+			public const int common_google_signin_btn_text_dark_disabled = 2131296267;
 			
-			// aapt resource value: 0x7f08000c
-			public const int common_google_signin_btn_text_dark_focused = 2131230732;
+			// aapt resource value: 0x7f09000c
+			public const int common_google_signin_btn_text_dark_focused = 2131296268;
 			
-			// aapt resource value: 0x7f08000a
-			public const int common_google_signin_btn_text_dark_pressed = 2131230730;
+			// aapt resource value: 0x7f09000a
+			public const int common_google_signin_btn_text_dark_pressed = 2131296266;
 			
-			// aapt resource value: 0x7f080012
-			public const int common_google_signin_btn_text_light = 2131230738;
+			// aapt resource value: 0x7f090012
+			public const int common_google_signin_btn_text_light = 2131296274;
 			
-			// aapt resource value: 0x7f08000d
-			public const int common_google_signin_btn_text_light_default = 2131230733;
+			// aapt resource value: 0x7f09000d
+			public const int common_google_signin_btn_text_light_default = 2131296269;
 			
-			// aapt resource value: 0x7f08000f
-			public const int common_google_signin_btn_text_light_disabled = 2131230735;
+			// aapt resource value: 0x7f09000f
+			public const int common_google_signin_btn_text_light_disabled = 2131296271;
 			
-			// aapt resource value: 0x7f080010
-			public const int common_google_signin_btn_text_light_focused = 2131230736;
+			// aapt resource value: 0x7f090010
+			public const int common_google_signin_btn_text_light_focused = 2131296272;
 			
-			// aapt resource value: 0x7f08000e
-			public const int common_google_signin_btn_text_light_pressed = 2131230734;
+			// aapt resource value: 0x7f09000e
+			public const int common_google_signin_btn_text_light_pressed = 2131296270;
 			
-			// aapt resource value: 0x7f080013
-			public const int common_plus_signin_btn_text_dark = 2131230739;
+			// aapt resource value: 0x7f090013
+			public const int common_plus_signin_btn_text_dark = 2131296275;
 			
-			// aapt resource value: 0x7f080000
-			public const int common_plus_signin_btn_text_dark_default = 2131230720;
+			// aapt resource value: 0x7f090000
+			public const int common_plus_signin_btn_text_dark_default = 2131296256;
 			
-			// aapt resource value: 0x7f080002
-			public const int common_plus_signin_btn_text_dark_disabled = 2131230722;
+			// aapt resource value: 0x7f090002
+			public const int common_plus_signin_btn_text_dark_disabled = 2131296258;
 			
-			// aapt resource value: 0x7f080003
-			public const int common_plus_signin_btn_text_dark_focused = 2131230723;
+			// aapt resource value: 0x7f090003
+			public const int common_plus_signin_btn_text_dark_focused = 2131296259;
 			
-			// aapt resource value: 0x7f080001
-			public const int common_plus_signin_btn_text_dark_pressed = 2131230721;
+			// aapt resource value: 0x7f090001
+			public const int common_plus_signin_btn_text_dark_pressed = 2131296257;
 			
-			// aapt resource value: 0x7f080014
-			public const int common_plus_signin_btn_text_light = 2131230740;
+			// aapt resource value: 0x7f090014
+			public const int common_plus_signin_btn_text_light = 2131296276;
 			
-			// aapt resource value: 0x7f080004
-			public const int common_plus_signin_btn_text_light_default = 2131230724;
+			// aapt resource value: 0x7f090004
+			public const int common_plus_signin_btn_text_light_default = 2131296260;
 			
-			// aapt resource value: 0x7f080006
-			public const int common_plus_signin_btn_text_light_disabled = 2131230726;
+			// aapt resource value: 0x7f090006
+			public const int common_plus_signin_btn_text_light_disabled = 2131296262;
 			
-			// aapt resource value: 0x7f080007
-			public const int common_plus_signin_btn_text_light_focused = 2131230727;
+			// aapt resource value: 0x7f090007
+			public const int common_plus_signin_btn_text_light_focused = 2131296263;
 			
-			// aapt resource value: 0x7f080005
-			public const int common_plus_signin_btn_text_light_pressed = 2131230725;
+			// aapt resource value: 0x7f090005
+			public const int common_plus_signin_btn_text_light_pressed = 2131296261;
 			
 			static Color()
 			{
@@ -389,140 +389,143 @@ namespace NFCFighters
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f0b001a
-			public const int MapBt = 2131427354;
+			// aapt resource value: 0x7f0c001a
+			public const int MapBt = 2131492890;
 			
-			// aapt resource value: 0x7f0b0005
-			public const int adjust_height = 2131427333;
+			// aapt resource value: 0x7f0c0005
+			public const int adjust_height = 2131492869;
 			
-			// aapt resource value: 0x7f0b0006
-			public const int adjust_width = 2131427334;
+			// aapt resource value: 0x7f0c0006
+			public const int adjust_width = 2131492870;
 			
-			// aapt resource value: 0x7f0b000a
-			public const int auto = 2131427338;
+			// aapt resource value: 0x7f0c000a
+			public const int auto = 2131492874;
 			
-			// aapt resource value: 0x7f0b002c
-			public const int bSetSave = 2131427372;
+			// aapt resource value: 0x7f0c002d
+			public const int bSetSave = 2131492909;
 			
-			// aapt resource value: 0x7f0b0021
-			public const int buttonBack = 2131427361;
+			// aapt resource value: 0x7f0c0021
+			public const int buttonBack = 2131492897;
 			
-			// aapt resource value: 0x7f0b001d
-			public const int buttonExit = 2131427357;
+			// aapt resource value: 0x7f0c001d
+			public const int buttonExit = 2131492893;
 			
-			// aapt resource value: 0x7f0b0020
-			public const int buttonMP = 2131427360;
+			// aapt resource value: 0x7f0c0020
+			public const int buttonMP = 2131492896;
 			
-			// aapt resource value: 0x7f0b001b
-			public const int buttonPlay = 2131427355;
+			// aapt resource value: 0x7f0c001b
+			public const int buttonPlay = 2131492891;
 			
-			// aapt resource value: 0x7f0b001f
-			public const int buttonSP = 2131427359;
+			// aapt resource value: 0x7f0c001f
+			public const int buttonSP = 2131492895;
 			
-			// aapt resource value: 0x7f0b001c
-			public const int buttonSettings = 2131427356;
+			// aapt resource value: 0x7f0c001c
+			public const int buttonSettings = 2131492892;
 			
-			// aapt resource value: 0x7f0b0024
-			public const int cbInvert = 2131427364;
+			// aapt resource value: 0x7f0c0025
+			public const int cbInvert = 2131492901;
 			
-			// aapt resource value: 0x7f0b000e
-			public const int clickBt = 2131427342;
+			// aapt resource value: 0x7f0c000e
+			public const int clickBt = 2131492878;
 			
-			// aapt resource value: 0x7f0b0026
-			public const int color = 2131427366;
+			// aapt resource value: 0x7f0c0027
+			public const int color = 2131492903;
 			
-			// aapt resource value: 0x7f0b0027
-			public const int color1 = 2131427367;
+			// aapt resource value: 0x7f0c0028
+			public const int color1 = 2131492904;
 			
-			// aapt resource value: 0x7f0b0028
-			public const int color2 = 2131427368;
+			// aapt resource value: 0x7f0c0029
+			public const int color2 = 2131492905;
 			
-			// aapt resource value: 0x7f0b0029
-			public const int color3 = 2131427369;
+			// aapt resource value: 0x7f0c002a
+			public const int color3 = 2131492906;
 			
-			// aapt resource value: 0x7f0b000b
-			public const int dark = 2131427339;
+			// aapt resource value: 0x7f0c000b
+			public const int dark = 2131492875;
 			
-			// aapt resource value: 0x7f0b0019
-			public const int fightBt = 2131427353;
+			// aapt resource value: 0x7f0c0019
+			public const int fightBt = 2131492889;
 			
-			// aapt resource value: 0x7f0b0000
-			public const int hybrid = 2131427328;
+			// aapt resource value: 0x7f0c0000
+			public const int hybrid = 2131492864;
 			
-			// aapt resource value: 0x7f0b0007
-			public const int icon_only = 2131427335;
+			// aapt resource value: 0x7f0c0007
+			public const int icon_only = 2131492871;
 			
-			// aapt resource value: 0x7f0b0011
-			public const int imgLogo = 2131427345;
+			// aapt resource value: 0x7f0c0011
+			public const int imgLogo = 2131492881;
 			
-			// aapt resource value: 0x7f0b000c
-			public const int light = 2131427340;
+			// aapt resource value: 0x7f0c000c
+			public const int light = 2131492876;
 			
-			// aapt resource value: 0x7f0b0023
-			public const int linearLayout = 2131427363;
+			// aapt resource value: 0x7f0c0024
+			public const int linearLayout = 2131492900;
 			
-			// aapt resource value: 0x7f0b0010
-			public const int linearLayout1 = 2131427344;
+			// aapt resource value: 0x7f0c0010
+			public const int linearLayout1 = 2131492880;
 			
-			// aapt resource value: 0x7f0b0012
-			public const int linearLayout2 = 2131427346;
+			// aapt resource value: 0x7f0c0012
+			public const int linearLayout2 = 2131492882;
 			
-			// aapt resource value: 0x7f0b000f
-			public const int mainLayout = 2131427343;
+			// aapt resource value: 0x7f0c000f
+			public const int mainLayout = 2131492879;
 			
-			// aapt resource value: 0x7f0b001e
-			public const int map = 2131427358;
+			// aapt resource value: 0x7f0c001e
+			public const int map = 2131492894;
 			
-			// aapt resource value: 0x7f0b002a
-			public const int nightmode = 2131427370;
+			// aapt resource value: 0x7f0c0022
+			public const int nfcInfo = 2131492898;
 			
-			// aapt resource value: 0x7f0b0001
-			public const int none = 2131427329;
+			// aapt resource value: 0x7f0c002b
+			public const int nightmode = 2131492907;
 			
-			// aapt resource value: 0x7f0b0002
-			public const int normal = 2131427330;
+			// aapt resource value: 0x7f0c0001
+			public const int none = 2131492865;
 			
-			// aapt resource value: 0x7f0b002b
-			public const int notifications = 2131427371;
+			// aapt resource value: 0x7f0c0002
+			public const int normal = 2131492866;
 			
-			// aapt resource value: 0x7f0b0003
-			public const int satellite = 2131427331;
+			// aapt resource value: 0x7f0c002c
+			public const int notifications = 2131492908;
 			
-			// aapt resource value: 0x7f0b0022
-			public const int scrollView = 2131427362;
+			// aapt resource value: 0x7f0c0003
+			public const int satellite = 2131492867;
 			
-			// aapt resource value: 0x7f0b0025
-			public const int setDivider = 2131427365;
+			// aapt resource value: 0x7f0c0023
+			public const int scrollView = 2131492899;
 			
-			// aapt resource value: 0x7f0b0008
-			public const int standard = 2131427336;
+			// aapt resource value: 0x7f0c0026
+			public const int setDivider = 2131492902;
 			
-			// aapt resource value: 0x7f0b0004
-			public const int terrain = 2131427332;
+			// aapt resource value: 0x7f0c0008
+			public const int standard = 2131492872;
 			
-			// aapt resource value: 0x7f0b0018
-			public const int textDir = 2131427352;
+			// aapt resource value: 0x7f0c0004
+			public const int terrain = 2131492868;
 			
-			// aapt resource value: 0x7f0b0014
-			public const int textLat = 2131427348;
+			// aapt resource value: 0x7f0c0018
+			public const int textDir = 2131492888;
 			
-			// aapt resource value: 0x7f0b0016
-			public const int textLon = 2131427350;
+			// aapt resource value: 0x7f0c0014
+			public const int textLat = 2131492884;
 			
-			// aapt resource value: 0x7f0b0013
-			public const int textView1 = 2131427347;
+			// aapt resource value: 0x7f0c0016
+			public const int textLon = 2131492886;
 			
-			// aapt resource value: 0x7f0b0015
-			public const int textView2 = 2131427349;
+			// aapt resource value: 0x7f0c0013
+			public const int textView1 = 2131492883;
 			
-			// aapt resource value: 0x7f0b0017
-			public const int textView3 = 2131427351;
+			// aapt resource value: 0x7f0c0015
+			public const int textView2 = 2131492885;
 			
-			// aapt resource value: 0x7f0b000d
-			public const int textureView1 = 2131427341;
+			// aapt resource value: 0x7f0c0017
+			public const int textView3 = 2131492887;
 			
-			// aapt resource value: 0x7f0b0009
-			public const int wide = 2131427337;
+			// aapt resource value: 0x7f0c000d
+			public const int textureView1 = 2131492877;
+			
+			// aapt resource value: 0x7f0c0009
+			public const int wide = 2131492873;
 			
 			static Id()
 			{
@@ -537,8 +540,8 @@ namespace NFCFighters
 		public partial class Integer
 		{
 			
-			// aapt resource value: 0x7f070000
-			public const int google_play_services_version = 2131165184;
+			// aapt resource value: 0x7f080000
+			public const int google_play_services_version = 2131230720;
 			
 			static Integer()
 			{
@@ -603,8 +606,8 @@ namespace NFCFighters
 		public partial class Plurals
 		{
 			
-			// aapt resource value: 0x7f090000
-			public const int numberOfClicks = 2131296256;
+			// aapt resource value: 0x7f0a0000
+			public const int numberOfClicks = 2131361792;
 			
 			static Plurals()
 			{
@@ -619,14 +622,14 @@ namespace NFCFighters
 		public partial class Raw
 		{
 			
-			// aapt resource value: 0x7f050000
-			public const int boss = 2131034112;
+			// aapt resource value: 0x7f060000
+			public const int boss = 2131099648;
 			
-			// aapt resource value: 0x7f050001
-			public const int button = 2131034113;
+			// aapt resource value: 0x7f060001
+			public const int button = 2131099649;
 			
-			// aapt resource value: 0x7f050002
-			public const int menu = 2131034114;
+			// aapt resource value: 0x7f060002
+			public const int menu = 2131099650;
 			
 			static Raw()
 			{
@@ -641,161 +644,161 @@ namespace NFCFighters
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f060024
-			public const int accessibility = 2131099684;
+			// aapt resource value: 0x7f070024
+			public const int accessibility = 2131165220;
 			
-			// aapt resource value: 0x7f06001f
-			public const int app_name = 2131099679;
+			// aapt resource value: 0x7f07001f
+			public const int app_name = 2131165215;
 			
-			// aapt resource value: 0x7f060001
-			public const int auth_google_play_services_client_facebook_display_name = 2131099649;
+			// aapt resource value: 0x7f070001
+			public const int auth_google_play_services_client_facebook_display_name = 2131165185;
 			
-			// aapt resource value: 0x7f060000
-			public const int auth_google_play_services_client_google_display_name = 2131099648;
+			// aapt resource value: 0x7f070000
+			public const int auth_google_play_services_client_google_display_name = 2131165184;
 			
-			// aapt resource value: 0x7f060032
-			public const int back = 2131099698;
+			// aapt resource value: 0x7f070032
+			public const int back = 2131165234;
 			
-			// aapt resource value: 0x7f060026
-			public const int colorblind = 2131099686;
+			// aapt resource value: 0x7f070026
+			public const int colorblind = 2131165222;
 			
-			// aapt resource value: 0x7f06002e
-			public const int colorselection = 2131099694;
+			// aapt resource value: 0x7f07002e
+			public const int colorselection = 2131165230;
 			
-			// aapt resource value: 0x7f060018
-			public const int common_google_play_services_api_unavailable_text = 2131099672;
+			// aapt resource value: 0x7f070018
+			public const int common_google_play_services_api_unavailable_text = 2131165208;
 			
-			// aapt resource value: 0x7f06000a
-			public const int common_google_play_services_enable_button = 2131099658;
+			// aapt resource value: 0x7f07000a
+			public const int common_google_play_services_enable_button = 2131165194;
 			
-			// aapt resource value: 0x7f060009
-			public const int common_google_play_services_enable_text = 2131099657;
+			// aapt resource value: 0x7f070009
+			public const int common_google_play_services_enable_text = 2131165193;
 			
-			// aapt resource value: 0x7f060008
-			public const int common_google_play_services_enable_title = 2131099656;
+			// aapt resource value: 0x7f070008
+			public const int common_google_play_services_enable_title = 2131165192;
 			
-			// aapt resource value: 0x7f060007
-			public const int common_google_play_services_install_button = 2131099655;
+			// aapt resource value: 0x7f070007
+			public const int common_google_play_services_install_button = 2131165191;
 			
-			// aapt resource value: 0x7f060005
-			public const int common_google_play_services_install_text_phone = 2131099653;
+			// aapt resource value: 0x7f070005
+			public const int common_google_play_services_install_text_phone = 2131165189;
 			
-			// aapt resource value: 0x7f060006
-			public const int common_google_play_services_install_text_tablet = 2131099654;
+			// aapt resource value: 0x7f070006
+			public const int common_google_play_services_install_text_tablet = 2131165190;
 			
-			// aapt resource value: 0x7f060004
-			public const int common_google_play_services_install_title = 2131099652;
+			// aapt resource value: 0x7f070004
+			public const int common_google_play_services_install_title = 2131165188;
 			
-			// aapt resource value: 0x7f060013
-			public const int common_google_play_services_invalid_account_text = 2131099667;
+			// aapt resource value: 0x7f070013
+			public const int common_google_play_services_invalid_account_text = 2131165203;
 			
-			// aapt resource value: 0x7f060012
-			public const int common_google_play_services_invalid_account_title = 2131099666;
+			// aapt resource value: 0x7f070012
+			public const int common_google_play_services_invalid_account_title = 2131165202;
 			
-			// aapt resource value: 0x7f060011
-			public const int common_google_play_services_network_error_text = 2131099665;
+			// aapt resource value: 0x7f070011
+			public const int common_google_play_services_network_error_text = 2131165201;
 			
-			// aapt resource value: 0x7f060010
-			public const int common_google_play_services_network_error_title = 2131099664;
+			// aapt resource value: 0x7f070010
+			public const int common_google_play_services_network_error_title = 2131165200;
 			
-			// aapt resource value: 0x7f060003
-			public const int common_google_play_services_notification_ticker = 2131099651;
+			// aapt resource value: 0x7f070003
+			public const int common_google_play_services_notification_ticker = 2131165187;
 			
-			// aapt resource value: 0x7f06001c
-			public const int common_google_play_services_restricted_profile_text = 2131099676;
+			// aapt resource value: 0x7f07001c
+			public const int common_google_play_services_restricted_profile_text = 2131165212;
 			
-			// aapt resource value: 0x7f06001b
-			public const int common_google_play_services_restricted_profile_title = 2131099675;
+			// aapt resource value: 0x7f07001b
+			public const int common_google_play_services_restricted_profile_title = 2131165211;
 			
-			// aapt resource value: 0x7f06001a
-			public const int common_google_play_services_sign_in_failed_text = 2131099674;
+			// aapt resource value: 0x7f07001a
+			public const int common_google_play_services_sign_in_failed_text = 2131165210;
 			
-			// aapt resource value: 0x7f060019
-			public const int common_google_play_services_sign_in_failed_title = 2131099673;
+			// aapt resource value: 0x7f070019
+			public const int common_google_play_services_sign_in_failed_title = 2131165209;
 			
-			// aapt resource value: 0x7f060002
-			public const int common_google_play_services_unknown_issue = 2131099650;
+			// aapt resource value: 0x7f070002
+			public const int common_google_play_services_unknown_issue = 2131165186;
 			
-			// aapt resource value: 0x7f060015
-			public const int common_google_play_services_unsupported_text = 2131099669;
+			// aapt resource value: 0x7f070015
+			public const int common_google_play_services_unsupported_text = 2131165205;
 			
-			// aapt resource value: 0x7f060014
-			public const int common_google_play_services_unsupported_title = 2131099668;
+			// aapt resource value: 0x7f070014
+			public const int common_google_play_services_unsupported_title = 2131165204;
 			
-			// aapt resource value: 0x7f060016
-			public const int common_google_play_services_update_button = 2131099670;
+			// aapt resource value: 0x7f070016
+			public const int common_google_play_services_update_button = 2131165206;
 			
-			// aapt resource value: 0x7f06000c
-			public const int common_google_play_services_update_text = 2131099660;
+			// aapt resource value: 0x7f07000c
+			public const int common_google_play_services_update_text = 2131165196;
 			
-			// aapt resource value: 0x7f06000b
-			public const int common_google_play_services_update_title = 2131099659;
+			// aapt resource value: 0x7f07000b
+			public const int common_google_play_services_update_title = 2131165195;
 			
-			// aapt resource value: 0x7f06000f
-			public const int common_google_play_services_updating_text = 2131099663;
+			// aapt resource value: 0x7f07000f
+			public const int common_google_play_services_updating_text = 2131165199;
 			
-			// aapt resource value: 0x7f06000e
-			public const int common_google_play_services_updating_title = 2131099662;
+			// aapt resource value: 0x7f07000e
+			public const int common_google_play_services_updating_title = 2131165198;
 			
-			// aapt resource value: 0x7f06000d
-			public const int common_google_play_services_wear_update_text = 2131099661;
+			// aapt resource value: 0x7f07000d
+			public const int common_google_play_services_wear_update_text = 2131165197;
 			
-			// aapt resource value: 0x7f060017
-			public const int common_open_on_phone = 2131099671;
+			// aapt resource value: 0x7f070017
+			public const int common_open_on_phone = 2131165207;
 			
-			// aapt resource value: 0x7f06001d
-			public const int common_signin_button_text = 2131099677;
+			// aapt resource value: 0x7f07001d
+			public const int common_signin_button_text = 2131165213;
 			
-			// aapt resource value: 0x7f06001e
-			public const int common_signin_button_text_long = 2131099678;
+			// aapt resource value: 0x7f07001e
+			public const int common_signin_button_text_long = 2131165214;
 			
-			// aapt resource value: 0x7f06002d
-			public const int configok = 2131099693;
+			// aapt resource value: 0x7f07002d
+			public const int configok = 2131165229;
 			
-			// aapt resource value: 0x7f060023
-			public const int doexit = 2131099683;
+			// aapt resource value: 0x7f070023
+			public const int doexit = 2131165219;
 			
-			// aapt resource value: 0x7f060022
-			public const int exit = 2131099682;
+			// aapt resource value: 0x7f070022
+			public const int exit = 2131165218;
 			
-			// aapt resource value: 0x7f060025
-			public const int invert = 2131099685;
+			// aapt resource value: 0x7f070025
+			public const int invert = 2131165221;
 			
-			// aapt resource value: 0x7f060031
-			public const int multiplayer = 2131099697;
+			// aapt resource value: 0x7f070031
+			public const int multiplayer = 2131165233;
 			
-			// aapt resource value: 0x7f06002f
-			public const int nightmode = 2131099695;
+			// aapt resource value: 0x7f07002f
+			public const int nightmode = 2131165231;
 			
-			// aapt resource value: 0x7f06002c
-			public const int no = 2131099692;
+			// aapt resource value: 0x7f07002c
+			public const int no = 2131165228;
 			
-			// aapt resource value: 0x7f060033
-			public const int notifications = 2131099699;
+			// aapt resource value: 0x7f070033
+			public const int notifications = 2131165235;
 			
-			// aapt resource value: 0x7f06002a
-			public const int ok = 2131099690;
+			// aapt resource value: 0x7f07002a
+			public const int ok = 2131165226;
 			
-			// aapt resource value: 0x7f060020
-			public const int play = 2131099680;
+			// aapt resource value: 0x7f070020
+			public const int play = 2131165216;
 			
-			// aapt resource value: 0x7f060029
-			public const int restart = 2131099689;
+			// aapt resource value: 0x7f070029
+			public const int restart = 2131165225;
 			
-			// aapt resource value: 0x7f060027
-			public const int save = 2131099687;
+			// aapt resource value: 0x7f070027
+			public const int save = 2131165223;
 			
-			// aapt resource value: 0x7f060028
-			public const int savesuccess = 2131099688;
+			// aapt resource value: 0x7f070028
+			public const int savesuccess = 2131165224;
 			
-			// aapt resource value: 0x7f060021
-			public const int settings = 2131099681;
+			// aapt resource value: 0x7f070021
+			public const int settings = 2131165217;
 			
-			// aapt resource value: 0x7f060030
-			public const int singleplayer = 2131099696;
+			// aapt resource value: 0x7f070030
+			public const int singleplayer = 2131165232;
 			
-			// aapt resource value: 0x7f06002b
-			public const int yes = 2131099691;
+			// aapt resource value: 0x7f07002b
+			public const int yes = 2131165227;
 			
 			static String()
 			{
@@ -803,6 +806,22 @@ namespace NFCFighters
 			}
 			
 			private String()
+			{
+			}
+		}
+		
+		public partial class Xml
+		{
+			
+			// aapt resource value: 0x7f050000
+			public const int nfc_tech_filter = 2131034112;
+			
+			static Xml()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Xml()
 			{
 			}
 		}

@@ -118,6 +118,7 @@ namespace NFCFighters
             {
                 StartService(bss);
                 var intent = new Intent(this, typeof(ReadNFCActivity));
+                intent.SetFlags(ActivityFlags.ClearTop | ActivityFlags.SingleTop);
                 StartActivity(intent);
             };
 
