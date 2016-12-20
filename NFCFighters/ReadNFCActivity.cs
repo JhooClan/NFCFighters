@@ -13,6 +13,7 @@ using Android.Nfc;
 using Android.Nfc.Tech;
 
 using NFCFighters.Models;
+using Java.Nio.Charset;
 
 namespace NFCFighters
 {
@@ -23,6 +24,7 @@ namespace NFCFighters
         private TextView info;
         private const int MESSAGE_SENT = 1;
         private PendingIntent mNfcPendingIntent;
+        private bool _inWriteMode = true;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -73,29 +75,48 @@ namespace NFCFighters
         [Android.Runtime.Register("onNewIntent", "(Landroid/content/Intent;)V", "GetOnNewIntent_Landroid_content_Intent_Handler")]
         protected override void OnNewIntent(Intent intent)
         {
-            base.OnNewIntent(intent);
-            Toast.MakeText(this, "Yeeee", ToastLength.Short).Show();
-            var tag = (Tag)intent.GetParcelableExtra(NfcAdapter.ExtraTag);
 
-            string[] techList = tag.GetTechList();
+            base.OnNewIntent(intent);
+            Toast.MakeText(this, "Leyendo NFC", ToastLength.Short).Show();
+            var tag = intent.GetParcelableExtra(NfcAdapter.ExtraTag) as Tag;
+
+            /*if (_inWriteMode)
+            {
+                _inWriteMode = false;
+
+                if (tag == null)
+                {
+                    return;
+                }
+
+                // These next few lines will create a payload (consisting of a string)
+                // and a mimetype. NFC record are arrays of bytes. 
+                var payload = Encoding.ASCII.GetBytes("YeeSaurio");
+                var mimeBytes = Encoding.ASCII.GetBytes("application/NFCFighters");
+                var apeRecord = new NdefRecord(NdefRecord.TnfMimeMedia, mimeBytes, new byte[0], payload);
+                var ndefMessage = new NdefMessage(new[] { apeRecord });
+
+                if (!TryAndWriteToTag(tag, ndefMessage))
+                {
+                    // Maybe the write couldn't happen because the tag wasn't formatted?
+                    TryAndFormatTagWithMessage(tag, ndefMessage);
+                }
+            }
+
+            /*string[] techList = tag.GetTechList();
             info.Text = "";
             foreach (string tech in techList)
             {
                 info.Text += "\n\t" + tech;
-            }
-
-            //if (tag.GetTechList().Any(s => s == ""))
-            //{
-
-            //}
-
-            var kosovo = NfcBarcodeType.Kovio;
+            }*/            
 
             NfcA nfca = NfcA.Get(tag);
             NdefFormatable ndeff = NdefFormatable.Get(tag);
             IsoDep iso = IsoDep.Get(tag);
+            MifareUltralight mifU = MifareUltralight.Get(tag);
+            
 
-            try
+            /*try
             {
                 nfca.Connect();
                 short s = nfca.Sak;
@@ -105,10 +126,10 @@ namespace NFCFighters
                 nfca.Close();
             } catch (Exception e)
             {
-                Toast.MakeText(this, e.Message, ToastLength.Short).Show();
-            }
+                Toast.MakeText(this, "NfcA" + e.Message, ToastLength.Short).Show();
+            }*/
 
-            try
+            /*try
             {
                 iso.Connect();
 
@@ -116,75 +137,104 @@ namespace NFCFighters
             }
             catch (Exception e)
             {
-                Toast.MakeText(this, e.Message, ToastLength.Short).Show();
-            }
+                Toast.MakeText(this, "IsoDep" + e.Message, ToastLength.Short).Show();
+            }*/
 
-            try
+            /*try
             {
                 ndeff.Connect();
-                info.Text += "\nType: " + ndeff.GetType();
-                info.Text += "\nConnected: " + ndeff.IsConnected;
+                //info.Text += "\nType: " + ndeff.GetType();
+                //info.Text += "\nConnected: " + ndeff.IsConnected;
                 var rawMsgs = intent.GetParcelableArrayExtra(NfcAdapter.ExtraNdefMessages);
-                if (rawMsgs == null)
-                {
-                    Toast.MakeText(this, "/dev/null", ToastLength.Short).Show();
-                    return;
-                }
-                List<NdefMessage> msgs = new List<NdefMessage>();
-                foreach (IParcelable rawMsg in rawMsgs)
-                {
-                    msgs.Add(rawMsg as NdefMessage);
-                }
-                List<NdefRecord> records = new List<NdefRecord>();
-
-                foreach (NdefMessage msg in msgs)
-                {
-                    records.Concat(msg.GetRecords());
-                }
+                var msg = (NdefMessage)rawMsgs[0];
+                var record = msg.GetRecords()[0];
                 
-                foreach (NdefRecord record in records)
-                {
-                    info.Text += "\n\t" + Encoding.ASCII.GetString(record.GetPayload());
-                }
+                info.Text += "\n\tNdefFormatted: " + Encoding.ASCII.GetString(record.GetPayload());
                 ndeff.Close();
             }
             catch (Exception e)
             {
-                Toast.MakeText(this, e.Message, ToastLength.Short).Show();
-            }
+                Toast.MakeText(this, "NdefFormatted " + e.Message, ToastLength.Short).Show();
+            }*/
 
-            /*
-            if (ndefMessage == null)
+            try
             {
-                info.Text = "The tag is empty !";
-                return;
+                mifU.Connect();
+                byte[] mPag = mifU.ReadPages(12);
+                StringBuilder aux = new StringBuilder();
+                String cont_mpag = "";
+                for (int i=0; i < mPag.Length; i++)
+                {
+                    aux.Append(mPag[i]);
+                }
+                cont_mpag = aux.ToString();
+                //info.Text = Charset.AvailableCharsets().ToString();
+                //var mifM = new String(cont_mpag, Charset.ForName("US-ASCII"));
+                string mifM = Encoding.ASCII.GetString(mPag);
+                info.Text += "\nTu personaje es " + mifM;
+                mifU.Close();
             }
-
-            /*
-            var rawMsgs = intent.GetParcelableArrayExtra(NfcAdapter.ExtraNdefMessages);
-            if (rawMsgs == null) {
-                Toast.MakeText(this, "/dev/null", ToastLength.Short).Show();
-                return;
-            }
-            List<NdefMessage> msgs = new List<NdefMessage>();
-            foreach (IParcelable rawMsg in rawMsgs)
+            catch (Exception e)
             {
-                msgs.Add(rawMsg as NdefMessage);
+                //Toast.MakeText(this, "MifareUltralight" + e.Message, ToastLength.Short).Show();
             }
-            List<NdefRecord> records = new List<NdefRecord>();
-            NdefRecord[] records = ndefMessage.GetRecords();
+        }
 
-            //foreach (NdefMessage msg in msgs)
-            //{
-            //    records.Concat(msg.GetRecords());
-            //}
+        private bool TryAndWriteToTag(Tag tag, NdefMessage ndefMessage)
+        {
 
-            List<string> strings = new List<string>();
-            foreach (NdefRecord record in records)
+            // This object is used to get information about the NFC tag as 
+            // well as perform operations on it.
+            var ndef = Ndef.Get(tag);
+            if (ndef != null)
             {
-                info.Text += "\n\t" + Encoding.ASCII.GetString(record.GetPayload());
+                ndef.Connect();
+
+                // Once written to, a tag can be marked as read-only - check for this.
+                if (!ndef.IsWritable)
+                {
+                    Toast.MakeText(this, "Tag is read-only.", ToastLength.Short).Show();
+                }
+
+                // NFC tags can only store a small amount of data, this depends on the type of tag its.
+                var size = ndefMessage.ToByteArray().Length;
+                if (ndef.MaxSize < size)
+                {
+                    Toast.MakeText(this, "Tag doesn't have enough space.", ToastLength.Short).Show();
+                }
+
+                ndef.WriteNdefMessage(ndefMessage);
+                //info.Text = ndefMessage.ToString();
+                Toast.MakeText(this, "Succesfully wrote tag.", ToastLength.Short).Show();
+                return true;
             }
-            */
+
+            return false;
+        }
+
+        private bool TryAndFormatTagWithMessage(Tag tag, NdefMessage ndefMessage)
+        {
+            var format = NdefFormatable.Get(tag);
+            if (format == null)
+            {
+                Toast.MakeText(this, "Tag does not appear to support NDEF format.", ToastLength.Short).Show();
+            }
+            else
+            {
+                try
+                {
+                    format.Connect();
+                    format.Format(ndefMessage);
+                    Toast.MakeText(this, "Tag successfully written.", ToastLength.Short).Show();
+                    return true;
+                }
+                catch (Exception ioex)
+                {
+                    var msg = "There was an error trying to format the tag: ";
+                    Toast.MakeText(this, msg + ioex, ToastLength.Short).Show();
+                }
+            }
+            return false;
         }
 
         protected override void OnResume()
