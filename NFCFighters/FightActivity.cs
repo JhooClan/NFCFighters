@@ -98,19 +98,47 @@ namespace NFCFighters
             StartService(bss);
             bss.SetAction(FXSoundService.ButtonSound);
 
-            Button bClick = FindViewById<Button>(Resource.Id.clickBt);
-            bClick.Text = enemy;
+            ImageView imgP = FindViewById<ImageView>(Resource.Id.playerImg);
+            //bClick.Text = enemy;
+            imgP.SetImageResource(Resource.Drawable.gherkin_back);
+            imgP.Clickable = true;
 
-            bClick.Click += delegate
+            ImageView imgV = FindViewById<ImageView>(Resource.Id.enemyImg);
+            switch (enemy) {
+                case "Moyanita":
+                    imgV.SetImageResource(Resource.Drawable.moyanita);
+                    break;
+            }
+
+            ImageView eLife = FindViewById<ImageView>(Resource.Id.enemyLife);
+            eLife.SetImageResource(Resource.Drawable.life100);
+
+            imgP.Click += delegate
             {
                 StartService(bss);
                 countMP++;
-                bClick.Text = Resources.GetQuantityString(Resource.Plurals.numberOfClicks, countMP, countMP);
+                //bClick.Text = Resources.GetQuantityString(Resource.Plurals.numberOfClicks, countMP, countMP);
+                if (countMP == 25)
+                {
+                    eLife.SetImageResource(Resource.Drawable.life75);
+                }
+                if (countMP == 50)
+                {
+                    eLife.SetImageResource(Resource.Drawable.life50);
+                }
+                if (countMP == 75)
+                {
+                    eLife.SetImageResource(Resource.Drawable.life25);
+                }
                 if (countMP == 85)
                 {
                     Intent mss = new Intent(ApplicationContext, typeof(MusicSoundService));
                     mss.SetAction(MusicSoundService.BossTheme);
                     StartService(mss);
+                }
+                if (countMP == 100)
+                {
+                    Finish();
                 }
             };
         }
