@@ -89,6 +89,8 @@ namespace NFCFighters
             _textureView = FindViewById<TextureView>(Resource.Id.textureView1);
             _textureView.SurfaceTextureListener = this;
 
+            string enemy = Intent.GetStringExtra("Enemy") ?? "Enemy not available";
+
             int countMP = 0;
 
             Intent bss = new Intent(ApplicationContext, typeof(FXSoundService));
@@ -97,6 +99,7 @@ namespace NFCFighters
             bss.SetAction(FXSoundService.ButtonSound);
 
             Button bClick = FindViewById<Button>(Resource.Id.clickBt);
+            bClick.Text = enemy;
 
             bClick.Click += delegate
             {

@@ -64,7 +64,7 @@ namespace NFCFighters
 
             map.Click += delegate
             {
-                /*var geoUri = Android.Net.Uri.Parse("geo:42.374260,-71.120824?z=20");
+                /*var geoUri = Android.Net.Uri.Parse("geo:38.986242,-1.897228?z=20");
                 var mapIntent = new Intent(Intent.ActionView, geoUri);*/
                 var mapIntent = new Intent(this, typeof(MapActivity));
                 StartActivity(mapIntent);

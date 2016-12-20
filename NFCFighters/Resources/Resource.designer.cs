@@ -362,19 +362,25 @@ namespace NFCFighters
 			public const int exit = 2130837554;
 			
 			// aapt resource value: 0x7f020033
-			public const int logo = 2130837555;
+			public const int gherkin = 2130837555;
 			
 			// aapt resource value: 0x7f020034
-			public const int multiplayer = 2130837556;
+			public const int logo = 2130837556;
 			
 			// aapt resource value: 0x7f020035
-			public const int play = 2130837557;
+			public const int multiplayer = 2130837557;
 			
 			// aapt resource value: 0x7f020036
-			public const int settings = 2130837558;
+			public const int play = 2130837558;
 			
 			// aapt resource value: 0x7f020037
-			public const int singleplayer = 2130837559;
+			public const int question = 2130837559;
+			
+			// aapt resource value: 0x7f020038
+			public const int settings = 2130837560;
+			
+			// aapt resource value: 0x7f020039
+			public const int singleplayer = 2130837561;
 			
 			static Drawable()
 			{

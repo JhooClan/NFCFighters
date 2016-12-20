@@ -14,10 +14,10 @@
 	<uses-permission android:name="android.permission.READ_LOGS" />
 	<uses-permission android:name="com.google.android.providers.gsp.permission.READ_GSERVICES" />
 	<uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
-	<uses-permission android:name="android.permission.MAPS_RECEIVE" />
-	<permission android:name="android.permission.MAPS_RECEIVE" android:protectionLevel="signature" />
+	<uses-permission android:name="com.clanjhoo.nfcfighters.permission.MAPS_RECEIVE" />
+  <permission android:name="com.clanjhoo.nfcfighters.permission.MAPS_RECEIVE" android:protectionLevel="signature" />
 	<application android:allowBackup="true" android:label="@string/app_name" android:icon="@drawable/logo">
-		<meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyCKAJ42WYn6lSb42NdC_70lHJjRDzC8zM8" />
+		<meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyDmYYKwwBfuOBbUXYzoUB6tQAcoe2yL8a8" />
 		<meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
 		<activity 
       android:name="ReadNFCActivity"
